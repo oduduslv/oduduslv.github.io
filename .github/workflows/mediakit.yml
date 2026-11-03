@@ -1,0 +1,43 @@
+# Atualiza os números do media kit todo dia, buscando direto na API do Instagram.
+# Precisa dos secrets IG_ACCESS_TOKEN e IG_USER_ID no repositório.
+name: Atualizar media kit
+
+on:
+  schedule:
+    - cron: "0 9 * * *" # 06:00 no horário de Brasília
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mediakit
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Buscar números no Instagram
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python scripts/atualizar_mediakit.py
+
+      - name: Publicar se algo mudou
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mediakit
+          if git diff --cached --quiet; then
+            echo "Nada mudou."
+          else
+            git commit -m "Atualiza números do media kit"
+            git push
+          fi

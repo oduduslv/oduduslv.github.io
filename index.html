@@ -244,14 +244,13 @@ footer { text-align: center; color: var(--muted); font-size: 12px; font-family: 
     <h2 class="rotulo" id="r-marcas">Para marcas</h2>
     <div class="marcas">
       <dl class="numeros">
-        <div><dt>seguidores no Instagram</dt><dd>19,1 mil</dd></div>
-        <div><dt>contas alcançadas por um único reel</dt><dd>55 mil</dd></div>
-        <div><dt>do público é masculino</dt><dd>73%</dd></div>
-        <div><dt>do público tem entre 25 e 44 anos</dt><dd>71%</dd></div>
+        <div><dt>seguidores no Instagram</dt><dd data-mk="seguidores">19,1 mil</dd></div>
+        <div><dt>contas alcançadas nos últimos 30 dias</dt><dd data-mk="alcance">211 mil</dd></div>
+        <div><dt>do público é masculino</dt><dd data-mk="homens">74%</dd></div>
+        <div><dt>do público tem entre 25 e 44 anos</dt><dd data-mk="idade">72%</dd></div>
       </dl>
-      <p class="fonte">Dados do Instagram, novembro de 2026 · parceiros: Dark Lab, Alpha Co.</p>
-      <!-- TROQUE AQUI: quando o media kit estiver pronto, coloque o link dele no href e tire o hidden -->
-      <a class="btn cheio" id="mediakit" href="#" target="_blank" rel="noopener" hidden>Ver media kit completo</a>
+      <p class="fonte" id="mk-fonte">Dados do Instagram, atualizados todo dia · parceiros: Dark Lab, Alpha Co.</p>
+      <a class="btn cheio" id="mediakit" href="mediakit/">Ver media kit completo</a>
       <div class="email">
         <span id="email">oduducontatto@gmail.com</span>
         <button class="btn" type="button" id="copiar-email" data-copiar="oduducontatto@gmail.com">Copiar e-mail</button>
@@ -307,6 +306,24 @@ document.querySelectorAll("[data-copiar]").forEach(function (b) {
     } else { falha(); }
   });
 });
+
+// Os números de "Para marcas" vêm do mesmo arquivo do media kit, que o GitHub atualiza todo dia
+function compacto(n) {
+  if (n >= 1e6) return (n / 1e6).toFixed(1).replace(".", ",").replace(",0", "") + " mi";
+  if (n >= 1e3) return (n / 1e3).toFixed(n >= 1e5 ? 0 : 1).replace(".", ",").replace(",0", "") + " mil";
+  return String(n);
+}
+fetch("mediakit/dados.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
+  var achar = function (lista, k) { var i = lista.filter(function (x) { return x.chave === k; })[0]; return i ? i.pct : 0; };
+  var idade = achar(d.publico.idade, "25-34") + achar(d.publico.idade, "35-44");
+  var campos = {
+    seguidores: compacto(d.perfil.seguidores),
+    alcance: compacto(d.ultimos_30_dias.alcance),
+    homens: Math.round(achar(d.publico.genero, "M")) + "%",
+    idade: Math.round(idade) + "%"
+  };
+  Object.keys(campos).forEach(function (k) { document.querySelector('[data-mk="' + k + '"]').textContent = campos[k]; });
+}).catch(function () {});
 </script>
 
 </body>

@@ -1,0 +1,207 @@
+{
+ "atualizado_em": "2026-11-03 15:17",
+ "perfil": {
+  "usuario": "oduduslv",
+  "seguidores": 19161,
+  "posts": 167
+ },
+ "ultimos_30_dias": {
+  "alcance": 210999,
+  "visualizacoes": 551836,
+  "contas_engajadas": 21803,
+  "interacoes": 35648,
+  "visitas_perfil": 13499,
+  "compartilhamentos": 3207,
+  "salvamentos": 5239
+ },
+ "posts_90_dias": {
+  "quantidade": 20,
+  "mediana_views_reels": 10836,
+  "maior_views": 169945,
+  "engajamento_medio_pct": 10.14
+ },
+ "publico": {
+  "genero": [
+   {
+    "chave": "M",
+    "valor": 13967,
+    "pct": 74.3
+   },
+   {
+    "chave": "U",
+    "valor": 3819,
+    "pct": 20.3
+   },
+   {
+    "chave": "F",
+    "valor": 1004,
+    "pct": 5.3
+   }
+  ],
+  "idade": [
+   {
+    "chave": "25-34",
+    "valor": 9075,
+    "pct": 48.3
+   },
+   {
+    "chave": "35-44",
+    "valor": 4545,
+    "pct": 24.2
+   },
+   {
+    "chave": "18-24",
+    "valor": 3389,
+    "pct": 18.0
+   },
+   {
+    "chave": "45-54",
+    "valor": 1200,
+    "pct": 6.4
+   },
+   {
+    "chave": "55-64",
+    "valor": 357,
+    "pct": 1.9
+   },
+   {
+    "chave": "65+",
+    "valor": 166,
+    "pct": 0.9
+   },
+   {
+    "chave": "13-17",
+    "valor": 58,
+    "pct": 0.3
+   }
+  ],
+  "paises": [
+   {
+    "chave": "BR",
+    "valor": 11556,
+    "pct": 63.3
+   },
+   {
+    "chave": "MX",
+    "valor": 1534,
+    "pct": 8.4
+   },
+   {
+    "chave": "IN",
+    "valor": 949,
+    "pct": 5.2
+   },
+   {
+    "chave": "US",
+    "valor": 813,
+    "pct": 4.5
+   },
+   {
+    "chave": "PE",
+    "valor": 416,
+    "pct": 2.3
+   }
+  ],
+  "cidades": [
+   {
+    "chave": "São Paulo, São Paulo (state)",
+    "valor": 767,
+    "pct": 13.5
+   },
+   {
+    "chave": "Rio de Janeiro, Rio de Janeiro (state)",
+    "valor": 451,
+    "pct": 7.9
+   },
+   {
+    "chave": "Belo Horizonte, Minas Gerais",
+    "valor": 372,
+    "pct": 6.5
+   },
+   {
+    "chave": "Fortaleza, Ceará",
+    "valor": 329,
+    "pct": 5.8
+   },
+   {
+    "chave": "Lagoa Santa, Minas Gerais",
+    "valor": 325,
+    "pct": 5.7
+   }
+  ]
+ },
+ "melhores_posts": [
+  {
+   "capa": "capas/1.jpg",
+   "link": "https://www.instagram.com/reel/DfCxRyBRRBU/",
+   "data": "2026-10-28",
+   "legenda": "Esse é meu protocolo atual! Se gostou, já me segue para não perder os próximos episódios d",
+   "views": 169945,
+   "alcance": 123653,
+   "curtidas": 7167,
+   "comentarios": 198,
+   "compartilhamentos": 1865,
+   "salvamentos": 3038
+  },
+  {
+   "capa": "capas/2.jpg",
+   "link": "https://www.instagram.com/reel/Dexnq8Lx14x/",
+   "data": "2026-10-21",
+   "legenda": "Vou fazer uma série de vídeos mostrando TUDO o que estou fazendo durante os próximos 30 di",
+   "views": 95267,
+   "alcance": 73259,
+   "curtidas": 5789,
+   "comentarios": 138,
+   "compartilhamentos": 632,
+   "salvamentos": 1242
+  },
+  {
+   "capa": "capas/3.jpg",
+   "link": "https://www.instagram.com/reel/Db9VnIgxrDy/",
+   "data": "2026-08-12",
+   "legenda": "Quem sonha muito tem que trabalhar dobrado...",
+   "views": 52686,
+   "alcance": 37840,
+   "curtidas": 2069,
+   "comentarios": 51,
+   "compartilhamentos": 129,
+   "salvamentos": 339
+  },
+  {
+   "capa": "capas/4.jpg",
+   "link": "https://www.instagram.com/p/DbwN10dEVqH/",
+   "data": "2026-08-07",
+   "legenda": "Treinão de Upper 2 pós campeonato… 😉✍️",
+   "views": 47331,
+   "alcance": 21000,
+   "curtidas": 837,
+   "comentarios": 15,
+   "compartilhamentos": 74,
+   "salvamentos": 304
+  },
+  {
+   "capa": "capas/5.jpg",
+   "link": "https://www.instagram.com/reel/Dc9RQpTxjve/",
+   "data": "2026-09-06",
+   "legenda": "Acho que não preciso falar nada, ne?! 😅",
+   "views": 47029,
+   "alcance": 30173,
+   "curtidas": 2868,
+   "comentarios": 49,
+   "compartilhamentos": 310,
+   "salvamentos": 652
+  },
+  {
+   "capa": "capas/6.jpg",
+   "link": "https://www.instagram.com/reel/DerVkkvxQCi/",
+   "data": "2026-10-19",
+   "legenda": "🤣🤣",
+   "views": 40191,
+   "alcance": 31359,
+   "curtidas": 2633,
+   "comentarios": 100,
+   "compartilhamentos": 397,
+   "salvamentos": 489
+  }
+ ]
+}

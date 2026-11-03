@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Media kit · @oduduslv</title>
+<meta name="description" content="Media kit do @oduduslv: alcance, público e melhores posts, atualizados todo dia com os dados do Instagram.">
+<meta property="og:title" content="Media kit · @oduduslv">
+<meta property="og:description" content="Alcance, público e melhores posts, atualizados todo dia.">
+<meta property="og:image" content="../foto.jpg">
+<meta name="theme-color" content="#060D1A">
+<link rel="icon" href="../foto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: mesma identidade da página de links (azul quase preto); números grandes primeiro, depois público e posts.
+   Todos os números vêm de dados.json, que o GitHub atualiza todo dia. */
+:root {
+  --bg: #060D1A;
+  --glow: #10284B;
+  --surface: #0B1729;
+  --ink: #E6ECF5;
+  --muted: #8091AB;
+  --line: #19273F;
+  --accent: #7FA8EE;
+  --btn: #2F6FE4;
+  --btn-ink: #FFFFFF;
+  --barra: #2F6FE4;
+  --barra-fundo: #13213A;
+  --display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: dark;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(120% 50% at 0% 0%, var(--glow) 0%, transparent 60%) no-repeat, var(--bg);
+  color: var(--ink); min-height: 100vh;
+  font-family: var(--body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 48px;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; }
+a { color: inherit; }
+.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+
+.voltar { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; align-self: flex-start; }
+.voltar:hover { color: var(--ink); }
+
+/* Topo */
+.topo { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: center; }
+.foto { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--accent); }
+.olho { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; }
+h1 { font-family: var(--display); font-stretch: 112%; font-weight: 850; font-size: clamp(26px, 6vw, 34px); line-height: 1; margin: 0; }
+.quem { color: var(--muted); margin: 8px 0 0; max-width: 46ch; }
+
+/* Seções */
+.secao { display: flex; flex-direction: column; gap: 12px; }
+.rotulo { font-family: var(--display); font-stretch: 112%; font-weight: 750; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 2px; }
+.caixa { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+
+/* Números grandes */
+.grandes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.num { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.num b { font-family: var(--display); font-stretch: 112%; font-weight: 850; font-size: clamp(26px, 7vw, 34px); line-height: 1; font-variant-numeric: tabular-nums; }
+.num span { color: var(--muted); font-size: 13px; line-height: 1.35; }
+.num.destaque b { color: var(--accent); }
+.menores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; margin: 0; }
+.menores div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.menores dt { order: 2; color: var(--muted); font-size: 12.5px; line-height: 1.35; }
+.menores dd { order: 1; margin: 0; font-family: var(--display); font-stretch: 105%; font-weight: 800; font-size: 20px; font-variant-numeric: tabular-nums; }
+
+/* Público */
+.publico { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.publico .caixa { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.publico h3 { font-family: var(--display); font-stretch: 105%; font-weight: 750; font-size: 14px; margin: 0; }
+.barras { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.barras li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; font-size: 13px; }
+.barras .nome { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.barras .pct { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.barras .trilho { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--barra-fundo); overflow: hidden; }
+.barras .trilho i { display: block; height: 100%; border-radius: 3px; background: var(--barra); }
+
+/* Posts */
+.posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.post { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; background: var(--surface); text-decoration: none; }
+.post img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(4, 10, 24, 0.88), rgba(4, 10, 24, 0) 55%); }
+.post .info { position: absolute; left: 8px; right: 8px; bottom: 8px; z-index: 1; display: flex; flex-direction: column; gap: 1px; }
+.post .info b { font-family: var(--display); font-stretch: 105%; font-weight: 800; font-size: 17px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.post .info span { font-family: var(--mono); font-size: 10.5px; color: #C9D4E6; }
+
+/* Parcerias e formatos */
+.lista-simples { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.lista-simples li { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 13px; background: var(--surface); }
+
+/* Contato */
+.contato { display: flex; flex-direction: column; gap: 12px; }
+.email { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.email span { font-family: var(--mono); font-size: 14px; overflow-wrap: anywhere; user-select: all; }
+.btns { display: flex; gap: 8px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; cursor: pointer;
+  font: 650 14px var(--body); border-radius: 10px; padding: 10px 14px; border: 1px solid var(--line); background: transparent; color: var(--ink);
+}
+.btn.cheio { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
+.btn:focus-visible, .post:focus-visible, .voltar:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.rodape { text-align: center; color: var(--muted); font-family: var(--mono); font-size: 11.5px; line-height: 1.6; }
+.carregando .num b, .carregando .menores dd { color: var(--line); }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px);
+  background: var(--ink); color: var(--bg); font: 650 14px var(--body); padding: 10px 16px; border-radius: 999px;
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+}
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+
+@media (min-width: 600px) {
+  .grandes { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .menores { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
+  .publico { grid-template-columns: minmax(0, 1fr); }
+  .topo { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
+  .quem { margin-inline: auto; }
+}
+</style>
+</head>
+<body>
+<main class="wrap carregando" id="kit">
+  <a class="voltar" href="../">← oduduslv.github.io</a>
+
+  <header class="topo">
+    <img class="foto" src="../foto.jpg" alt="Eduardo Silva" width="92" height="92">
+    <div>
+      <p class="olho">Media kit</p>
+      <h1>@oduduslv</h1>
+      <!-- TROQUE AQUI: a apresentação para as marcas -->
+      <p class="quem">Eduardo Silva, atleta natural e 3x campeão PNBA. Mostro minha rotina real de treino, dieta e mentalidade, sem filtro.</p>
+    </div>
+  </header>
+
+  <section class="secao" aria-labelledby="r-numeros">
+    <h2 class="rotulo" id="r-numeros">Últimos 30 dias</h2>
+    <div class="grandes">
+      <div class="num destaque"><b data-campo="seguidores">—</b><span>seguidores</span></div>
+      <div class="num"><b data-campo="alcance">—</b><span>contas alcançadas</span></div>
+      <div class="num"><b data-campo="visualizacoes">—</b><span>visualizações</span></div>
+      <div class="num"><b data-campo="engajamento">—</b><span>engajamento médio por post</span></div>
+    </div>
+    <div class="caixa">
+      <dl class="menores">
+        <div><dt>views medianas por reel</dt><dd data-campo="mediana">—</dd></div>
+        <div><dt>maior reel dos últimos 90 dias</dt><dd data-campo="maior">—</dd></div>
+        <div><dt>contas que interagiram</dt><dd data-campo="engajadas">—</dd></div>
+        <div><dt>salvamentos e compartilhamentos</dt><dd data-campo="salvos">—</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="r-publico">
+    <h2 class="rotulo" id="r-publico">Quem me acompanha</h2>
+    <div class="publico">
+      <div class="caixa"><h3>Gênero</h3><ul class="barras" id="genero"></ul></div>
+      <div class="caixa"><h3>Idade</h3><ul class="barras" id="idade"></ul></div>
+      <div class="caixa"><h3>Países</h3><ul class="barras" id="paises"></ul></div>
+      <div class="caixa"><h3>Cidades</h3><ul class="barras" id="cidades"></ul></div>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="r-posts">
+    <h2 class="rotulo" id="r-posts">Posts com mais visualizações</h2>
+    <div class="posts" id="posts"></div>
+  </section>
+
+  <section class="secao" aria-labelledby="r-parcerias">
+    <h2 class="rotulo" id="r-parcerias">Parcerias</h2>
+    <!-- TROQUE AQUI: marcas com quem você já trabalhou -->
+    <ul class="lista-simples">
+      <li>Dark Lab</li>
+      <li>Alpha Co.</li>
+    </ul>
+  </section>
+
+  <section class="secao" aria-labelledby="r-formatos">
+    <h2 class="rotulo" id="r-formatos">Formatos</h2>
+    <!-- TROQUE AQUI: o que você oferece nas parcerias -->
+    <ul class="lista-simples">
+      <li>Reels</li>
+      <li>Stories</li>
+      <li>Carrossel</li>
+      <li>Cupom e link de afiliado</li>
+      <li>Produto na rotina</li>
+    </ul>
+  </section>
+
+  <section class="secao" aria-labelledby="r-contato">
+    <h2 class="rotulo" id="r-contato">Contato para parcerias</h2>
+    <div class="caixa contato">
+      <div class="email">
+        <span id="email">oduducontatto@gmail.com</span>
+        <div class="btns">
+          <button class="btn" type="button" id="copiar-email">Copiar</button>
+          <a class="btn cheio" href="mailto:oduducontatto@gmail.com?subject=Parceria%20com%20%40oduduslv">Enviar e-mail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="rodape" id="rodape">Números do Instagram, atualizados automaticamente todo dia.</p>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+var PAISES = { BR: "Brasil", MX: "México", IN: "Índia", US: "Estados Unidos", PE: "Peru", AR: "Argentina", CO: "Colômbia",
+  CL: "Chile", PT: "Portugal", ES: "Espanha", IT: "Itália", ID: "Indonésia", PH: "Filipinas", EG: "Egito", PK: "Paquistão",
+  BD: "Bangladesh", TR: "Turquia", VE: "Venezuela", EC: "Equador", BO: "Bolívia", PY: "Paraguai", UY: "Uruguai", GB: "Reino Unido",
+  DE: "Alemanha", FR: "França", CA: "Canadá", JP: "Japão", MA: "Marrocos", NG: "Nigéria", DZ: "Argélia", IQ: "Iraque" };
+var GENERO = { M: "Homens", F: "Mulheres", U: "Não informado" };
+
+function compacto(n) {
+  if (n >= 1e6) return (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace(".", ",") + " mi";
+  if (n >= 1e3) return (n / 1e3).toFixed(n >= 1e5 ? 0 : 1).replace(".", ",").replace(",0", "") + " mil";
+  return String(n);
+}
+function pct(v) { return String(v).replace(".", ",") + "%"; }
+function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+function barras(id, itens, rotulo) {
+  var ul = document.getElementById(id);
+  var max = Math.max.apply(null, itens.map(function (i) { return i.pct; })) || 1;
+  itens.forEach(function (i) {
+    var li = el("li");
+    li.appendChild(el("span", "nome", rotulo(i.chave)));
+    li.appendChild(el("span", "pct", pct(i.pct)));
+    var t = el("span", "trilho"), b = el("i");
+    b.style.width = (100 * i.pct / max) + "%";
+    t.appendChild(b); li.appendChild(t); ul.appendChild(li);
+  });
+}
+
+function preencher(d) {
+  var c = function (nome, valor) { document.querySelector('[data-campo="' + nome + '"]').textContent = valor; };
+  var t = d.ultimos_30_dias, p = d.posts_90_dias;
+  c("seguidores", compacto(d.perfil.seguidores));
+  c("alcance", compacto(t.alcance));
+  c("visualizacoes", compacto(t.visualizacoes));
+  c("engajamento", pct(p.engajamento_medio_pct.toFixed(1)));
+  c("mediana", compacto(p.mediana_views_reels));
+  c("maior", compacto(p.maior_views));
+  c("engajadas", compacto(t.contas_engajadas));
+  c("salvos", compacto(t.salvamentos + t.compartilhamentos));
+
+  barras("genero", d.publico.genero, function (k) { return GENERO[k] || k; });
+  barras("idade", d.publico.idade.filter(function (i) { return i.pct >= 1; })
+    .sort(function (a, b) { return a.chave < b.chave ? -1 : 1; }), function (k) { return k + " anos"; });
+  barras("paises", d.publico.paises, function (k) { return PAISES[k] || k; });
+  barras("cidades", d.publico.cidades, function (k) { return k.replace(" (state)", "").split(",")[0]; });
+
+  var grade = document.getElementById("posts");
+  d.melhores_posts.forEach(function (m) {
+    var a = el("a", "post");
+    a.href = m.link; a.target = "_blank"; a.rel = "noopener";
+    a.setAttribute("aria-label", compacto(m.views) + " visualizações: " + m.legenda);
+    var img = el("img"); img.src = m.capa; img.alt = ""; img.loading = "lazy";
+    var info = el("span", "info");
+    info.appendChild(el("b", null, compacto(m.views)));
+    info.appendChild(el("span", null, "views · " + compacto(m.compartilhamentos) + " compart."));
+    a.appendChild(img); a.appendChild(info); grade.appendChild(a);
+  });
+
+  var data = d.atualizado_em.split(" ")[0].split("-");
+  document.getElementById("rodape").textContent =
+    "Números do Instagram, atualizados automaticamente. Última atualização: " + data[2] + "/" + data[1] + "/" + data[0] + ".";
+  document.getElementById("kit").classList.remove("carregando");
+}
+
+fetch("dados.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(preencher).catch(function () {
+  document.getElementById("rodape").textContent = "Não consegui carregar os números agora. Recarregue a página.";
+});
+
+var toast = document.getElementById("toast"), timer;
+document.getElementById("copiar-email").addEventListener("click", function () {
+  var texto = document.getElementById("email").textContent;
+  var ok = function () { toast.textContent = "E-mail copiado"; toast.classList.add("on"); clearTimeout(timer); timer = setTimeout(function () { toast.classList.remove("on"); }, 1800); };
+  var falha = function () { var r = document.createRange(); r.selectNodeContents(document.getElementById("email")); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(texto).then(ok, falha); else falha();
+});
+</script>
+</body>
+</html>
