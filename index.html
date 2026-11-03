@@ -154,12 +154,7 @@ a { color: inherit; }
 .breve .btn { align-self: flex-start; flex: none; }
 
 /* Para marcas */
-.marcas { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; display: flex; flex-direction: column; gap: 16px; }
-.numeros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; margin: 0; }
-.numeros div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.numeros dt { order: 2; color: var(--muted); font-size: 12.5px; line-height: 1.35; }
-.numeros dd { order: 1; margin: 0; font-family: var(--display); font-stretch: 112%; font-weight: 800; font-size: 22px; font-variant-numeric: tabular-nums; }
-.fonte { font-family: var(--mono); font-size: 11px; color: var(--muted); margin: -6px 0 0; }
+.marcas { display: flex; flex-direction: column; gap: 14px; }
 .email {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
   border-top: 1px solid var(--line); padding-top: 14px;
@@ -250,13 +245,6 @@ footer { text-align: center; color: var(--muted); font-size: 12px; font-family: 
   <section class="secao" aria-labelledby="r-marcas">
     <h2 class="rotulo" id="r-marcas">Para marcas</h2>
     <div class="marcas">
-      <dl class="numeros">
-        <div><dt>seguidores no Instagram</dt><dd data-mk="seguidores">19,2 mil</dd></div>
-        <div><dt>contas alcançadas nos últimos 30 dias</dt><dd data-mk="alcance">211 mil</dd></div>
-        <div><dt>do público é masculino</dt><dd data-mk="homens">74%</dd></div>
-        <div><dt>do público tem entre 25 e 44 anos</dt><dd data-mk="idade">73%</dd></div>
-      </dl>
-      <p class="fonte" id="mk-fonte">Dados do Instagram, atualizados a cada 6 horas · parceiros: Dark Lab, Alpha Co.</p>
       <a class="link kit" id="mediakit" href="mediakit/">
         <img class="mini" src="foto.jpg" alt="" width="44" height="44">
         <span class="txt"><span class="t">Media Kit</span><span class="s">Números sincronizados com o Instagram</span></span>
@@ -317,24 +305,6 @@ document.querySelectorAll("[data-copiar]").forEach(function (b) {
     } else { falha(); }
   });
 });
-
-// Os números de "Para marcas" vêm do mesmo arquivo do media kit, que o GitHub atualiza todo dia
-function compacto(n) {
-  if (n >= 1e6) return (n / 1e6).toFixed(1).replace(".", ",").replace(",0", "") + " mi";
-  if (n >= 1e3) return (n / 1e3).toFixed(n >= 1e5 ? 0 : 1).replace(".", ",").replace(",0", "") + " mil";
-  return String(n);
-}
-fetch("mediakit/dados.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (d) {
-  var achar = function (lista, k) { var i = lista.filter(function (x) { return x.chave === k; })[0]; return i ? i.pct : 0; };
-  var idade = achar(d.publico.idade, "25-34") + achar(d.publico.idade, "35-44");
-  var campos = {
-    seguidores: compacto(d.perfil.seguidores),
-    alcance: compacto(d.ultimos_30_dias.alcance),
-    homens: Math.round(achar(d.publico.genero, "M")) + "%",
-    idade: Math.round(idade) + "%"
-  };
-  Object.keys(campos).forEach(function (k) { document.querySelector('[data-mk="' + k + '"]').textContent = campos[k]; });
-}).catch(function () {});
 </script>
 
 </body>
