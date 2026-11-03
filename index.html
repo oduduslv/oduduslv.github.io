@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="MusculaÃ§Ã£o, corrida e mente no lugar. Cupons, sÃ©rie de 30 dias e contato do Eduardo Silva (@oduduslv).">
+<meta property="og:title" content="Eduardo Silva Â· @oduduslv">
+<meta property="og:description" content="MusculaÃ§Ã£o, corrida e mente no lugar. Cupons, sÃ©rie de 30 dias e contato.">
+<meta property="og:image" content="foto.jpg">
+<meta name="theme-color" content="#060D1A">
+<link rel="icon" href="foto.jpg">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Links do Odudu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: uma coluna estreita como um número de peito de corrida; o card da série é o único bloco cheio de cor.
+   Tema único escuro: azul quase preto com brilho marinho no canto, cores tiradas do site de referência dele. */
+:root {
+  --bg: #060D1A;
+  --glow: #10284B;
+  --surface: #0B1729;
+  --ink: #E6ECF5;
+  --muted: #8091AB;
+  --line: #19273F;
+  --navy: #0A1A33;
+  --navy-2: #10284B;
+  --navy-line: #1E3A66;
+  --navy-ink: #E6ECF5;
+  --accent: #7FA8EE;
+  --btn: #2F6FE4;
+  --btn-ink: #FFFFFF;
+  --tick-off: rgba(230, 236, 245, 0.12);
+  --display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: radial-gradient(120% 60% at 0% 0%, var(--glow) 0%, transparent 60%) no-repeat, var(--bg);
+  color: var(--ink); min-height: 100vh;
+  font-family: var(--body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 48px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+.wrap { max-width: 440px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+
+/* Topo */
+.hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+.foto {
+  width: 112px; height: 112px; border-radius: 50%; object-fit: cover;
+  border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--accent);
+}
+.nome {
+  font-family: var(--display); font-stretch: 125%; font-weight: 850;
+  font-size: 26px; line-height: 1; letter-spacing: 0.01em; text-transform: uppercase; margin: 4px 0 0;
+}
+.handle { font-family: var(--mono); font-size: 13px; color: var(--muted); margin: 0; }
+.tese { font-size: 17px; max-width: 30ch; margin: 2px 0 0; text-wrap: balance; }
+.selos { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 0; margin: 2px 0 0; list-style: none; }
+.selos li {
+  font-family: var(--display); font-stretch: 100%; font-weight: 650; font-size: 11px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid var(--line); border-radius: 999px; padding: 5px 10px; color: var(--muted);
+}
+
+/* Títulos de seção */
+.secao { display: flex; flex-direction: column; gap: 10px; }
+.rotulo {
+  font-family: var(--display); font-stretch: 112%; font-weight: 750; font-size: 12px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 2px;
+}
+
+/* Card da série 30 dias */
+.serie {
+  display: block; text-decoration: none; color: var(--navy-ink);
+  background: linear-gradient(160deg, var(--navy-2), var(--navy) 70%); border: 1px solid var(--navy-line);
+  border-radius: 18px; padding: 20px 20px 18px;
+}
+.serie-topo { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.serie-tag { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; opacity: 0.8; }
+.serie-dia { font-family: var(--mono); font-weight: 700; font-size: 13px; color: var(--accent); white-space: nowrap; }
+.serie h2 {
+  font-family: var(--display); font-stretch: 125%; font-weight: 850; text-transform: uppercase;
+  font-size: 30px; line-height: 0.95; margin: 14px 0 6px; text-wrap: balance;
+}
+.serie p { margin: 0; opacity: 0.86; font-size: 14px; }
+.ticks { display: grid; grid-template-columns: repeat(15, 1fr); gap: 4px; margin: 18px 0 14px; }
+.ticks span { height: 8px; border-radius: 2px; background: var(--tick-off); }
+.ticks span.feito { background: var(--accent); }
+.ticks span.hoje { background: var(--accent); box-shadow: 0 0 0 2px var(--navy), 0 0 0 3px var(--accent); }
+.serie-cta { font-family: var(--display); font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+
+/* Botões de link */
+.lista { display: flex; flex-direction: column; gap: 8px; }
+.link {
+  display: flex; align-items: center; gap: 14px; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 14px 16px; min-height: 60px; transition: border-color .15s, transform .15s;
+}
+.link:hover { border-color: var(--ink); }
+.link:active { transform: scale(0.99); }
+.link .ico { width: 22px; height: 22px; flex: none; color: var(--ink); }
+.link .txt { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.link .t { font-weight: 650; font-size: 15px; }
+.link .s { color: var(--muted); font-size: 13px; }
+.link .seta { width: 16px; height: 16px; flex: none; color: var(--muted); }
+
+/* Cupons */
+.cupom {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 16px; display: grid; grid-template-columns: 1fr auto; gap: 12px 14px; align-items: center;
+}
+.cupom .marca { font-family: var(--display); font-stretch: 112%; font-weight: 800; font-size: 16px; text-transform: uppercase; }
+.cupom .oque { color: var(--muted); font-size: 13px; }
+.codigo {
+  font-family: var(--mono); font-weight: 700; font-size: 18px; letter-spacing: 0.14em;
+  border: 1.5px dashed var(--accent); color: var(--accent); border-radius: 8px; padding: 6px 10px;
+  user-select: all;
+}
+.acoes { grid-column: 1 / -1; display: flex; gap: 8px; }
+.btn {
+  flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font: 650 14px var(--body); border-radius: 10px; padding: 11px 12px; cursor: pointer; text-decoration: none;
+  border: 1px solid var(--line); background: transparent; color: var(--ink);
+}
+.btn.cheio { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
+.btn:focus-visible, .link:focus-visible, .serie:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Em breve */
+.breve {
+  border: 1px dashed var(--line); border-radius: 14px; padding: 16px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.breve .t { font-weight: 650; }
+.breve p { margin: 0; color: var(--muted); font-size: 14px; }
+.breve .btn { align-self: flex-start; flex: none; }
+
+/* Para marcas */
+.marcas { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px; display: flex; flex-direction: column; gap: 16px; }
+.numeros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; margin: 0; }
+.numeros div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.numeros dt { order: 2; color: var(--muted); font-size: 12.5px; line-height: 1.35; }
+.numeros dd { order: 1; margin: 0; font-family: var(--display); font-stretch: 112%; font-weight: 800; font-size: 22px; font-variant-numeric: tabular-nums; }
+.fonte { font-family: var(--mono); font-size: 11px; color: var(--muted); margin: -6px 0 0; }
+.email {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  border-top: 1px solid var(--line); padding-top: 14px;
+}
+.email span { font-family: var(--mono); font-size: 13px; min-width: 0; overflow-wrap: anywhere; user-select: all; }
+.email .btn { flex: none; padding: 8px 12px; }
+
+footer { text-align: center; color: var(--muted); font-size: 12px; font-family: var(--mono); }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px);
+  background: var(--ink); color: var(--bg); font: 650 14px var(--body); padding: 10px 16px; border-radius: 999px;
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+}
+.toast.on { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { .link, .toast { transition: none; } }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <header class="hero">
+    <!-- TROQUE AQUI: foto nova de perfil (quadrada, rosto ocupando o centro) -->
+    <img class="foto" src="foto.jpg" alt="Eduardo Silva" width="112" height="112">
+    <div>
+      <h1 class="nome">Eduardo Silva</h1>
+      <p class="handle">@oduduslv</p>
+    </div>
+    <p class="tese">Musculação, corrida e mente no lugar. Mostro a rotina real, todo dia.</p>
+    <ul class="selos">
+      <li>Atleta natural</li>
+      <li>3x campeão PNBA</li>
+      <li>Treino híbrido</li>
+    </ul>
+  </header>
+
+  <!-- TROQUE AQUI: quando a série acabar, troque este card pelo próximo projeto -->
+  <a class="serie" id="serie" href="https://www.instagram.com/reel/Dexnq8Lx14x/" target="_blank" rel="noopener">
+    <div class="serie-topo">
+      <span class="serie-tag">SÉRIE · AO VIVO NO INSTA</span>
+      <span class="serie-dia" id="serie-dia">DIA 01/30</span>
+    </div>
+    <h2>30 dias pra mudar o shape</h2>
+    <p>Treino, dieta e cabeça, sem esconder nada. Começa pelo episódio 1.</p>
+    <div class="ticks" id="ticks" aria-hidden="true"></div>
+    <span class="serie-cta">Assistir do começo
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </a>
+
+  <section class="secao" aria-labelledby="r-cupons">
+    <h2 class="rotulo" id="r-cupons">Meus cupons</h2>
+
+    <div class="cupom">
+      <div>
+        <div class="marca">Dark Lab</div>
+        <div class="oque">Suplementos que eu uso na preparação</div>
+      </div>
+      <span class="codigo">ODUDU</span>
+      <div class="acoes">
+        <button class="btn" type="button" id="copiar-darklab" data-copiar="ODUDU">Copiar cupom</button>
+        <!-- TROQUE AQUI: se a marca te deu um link de afiliado, coloque no href -->
+        <a class="btn cheio" href="https://www.darklabsuplementos.com.br" target="_blank" rel="noopener">Ir para a loja</a>
+      </div>
+    </div>
+
+    <div class="cupom">
+      <div>
+        <div class="marca">Alpha Co.</div>
+        <div class="oque">Roupas de treino que eu visto</div>
+      </div>
+      <span class="codigo">ODUDU</span>
+      <div class="acoes">
+        <button class="btn" type="button" id="copiar-alphaco" data-copiar="ODUDU">Copiar cupom</button>
+        <a class="btn cheio" href="https://www.usealphaco.com.br" target="_blank" rel="noopener">Ir para a loja</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="r-redes">
+    <h2 class="rotulo" id="r-redes">Me acompanhe</h2>
+    <div class="lista">
+      <a class="link" href="https://www.instagram.com/oduduslv/" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+        <span class="txt"><span class="t">Instagram</span><span class="s">Rotina, treino e a série de 30 dias</span></span>
+        <svg class="seta" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <!-- TROQUE AQUI: descomente e coloque seu @ do TikTok
+      <a class="link" href="https://www.tiktok.com/@SEU_USUARIO" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.4 2.6 2.2 4.4 5 4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="txt"><span class="t">TikTok</span><span class="s">Os cortes do dia a dia</span></span>
+        <svg class="seta" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      -->
+      <!-- TROQUE AQUI: descomente e coloque o link do seu canal
+      <a class="link" href="https://www.youtube.com/@SEU_CANAL" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 9.5v5l4-2.5z" fill="currentColor"/></svg>
+        <span class="txt"><span class="t">YouTube</span><span class="s">Vlogs completos</span></span>
+        <svg class="seta" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      -->
+      <!-- TROQUE AQUI: quando começar a correr, descomente com seu perfil do Strava
+      <a class="link" href="https://www.strava.com/athletes/SEU_ID" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 3l-6 12h4l2-4 2 4h4zM15 15l-2 4 3 0 3-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span class="txt"><span class="t">Strava</span><span class="s">Minhas corridas, km por km</span></span>
+        <svg class="seta" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      -->
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="r-produtos">
+    <h2 class="rotulo" id="r-produtos">Meus produtos</h2>
+    <!-- TROQUE AQUI: quando lançar, troque este bloco por um .link apontando para a página de venda (Hotmart, Kiwify...) -->
+    <div class="breve">
+      <span class="t">Guia de treino híbrido · em breve</span>
+      <p>Musculação e corrida na mesma semana sem perder massa. Quer saber primeiro? Me chama no direct com a palavra GUIA.</p>
+      <a class="btn" href="https://ig.me/m/oduduslv" target="_blank" rel="noopener">Mandar GUIA no direct</a>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="r-marcas">
+    <h2 class="rotulo" id="r-marcas">Para marcas</h2>
+    <div class="marcas">
+      <dl class="numeros">
+        <div><dt>seguidores no Instagram</dt><dd>19,1 mil</dd></div>
+        <div><dt>contas alcançadas por um único reel</dt><dd>55 mil</dd></div>
+        <div><dt>do público é masculino</dt><dd>73%</dd></div>
+        <div><dt>do público tem entre 25 e 44 anos</dt><dd>71%</dd></div>
+      </dl>
+      <p class="fonte">Dados do Instagram, novembro de 2026 · parceiros: Dark Lab, Alpha Co.</p>
+      <!-- TROQUE AQUI: quando o media kit estiver pronto, coloque o link dele no href e tire o hidden -->
+      <a class="btn cheio" id="mediakit" href="#" target="_blank" rel="noopener" hidden>Ver media kit completo</a>
+      <div class="email">
+        <span id="email">oduducontatto@gmail.com</span>
+        <button class="btn" type="button" id="copiar-email" data-copiar="oduducontatto@gmail.com">Copiar e-mail</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>Eduardo Silva · Brasil</footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+// TROQUE AQUI: data do episódio 1 da série
+var INICIO_SERIE = new Date(2026, 9, 22);
+var TOTAL = 30;
+
+(function serie() {
+  var hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+  var dia = Math.floor((hoje - INICIO_SERIE) / 86400000) + 1;
+  dia = Math.max(1, Math.min(dia, TOTAL + 1));
+  var ticks = document.getElementById("ticks");
+  for (var i = 1; i <= TOTAL; i++) {
+    var s = document.createElement("span");
+    if (i < dia) s.className = "feito";
+    if (i === dia) s.className = "hoje";
+    ticks.appendChild(s);
+  }
+  document.getElementById("serie-dia").textContent =
+    dia > TOTAL ? "COMPLETA" : "DIA " + String(dia).padStart(2, "0") + "/" + TOTAL;
+})();
+
+var toast = document.getElementById("toast"), timer;
+function avisar(msg) {
+  toast.textContent = msg; toast.classList.add("on");
+  clearTimeout(timer); timer = setTimeout(function () { toast.classList.remove("on"); }, 1800);
+}
+function selecionar(texto) {
+  var campo = document.createElement("textarea");
+  campo.value = texto; campo.setAttribute("readonly", ""); campo.style.position = "fixed"; campo.style.opacity = "0";
+  document.body.appendChild(campo); campo.select();
+  var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+  document.body.removeChild(campo);
+  return ok;
+}
+document.querySelectorAll("[data-copiar]").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var texto = b.getAttribute("data-copiar");
+    var msg = texto.indexOf("@") > -1 ? "E-mail copiado" : "Cupom " + texto + " copiado";
+    var falha = function () { avisar(selecionar(texto) ? msg : "Segure o texto para copiar"); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(texto).then(function () { avisar(msg); }, falha);
+    } else { falha(); }
+  });
+});
+</script>
+
+</body>
+</html>
