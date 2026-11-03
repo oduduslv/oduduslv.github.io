@@ -275,7 +275,7 @@ function preencher(d) {
     var img = el("img"); img.src = m.capa; img.alt = ""; img.loading = "lazy";
     var info = el("span", "info");
     info.appendChild(el("b", null, compacto(m.views)));
-    info.appendChild(el("span", null, "views · " + compacto(m.compartilhamentos) + " compart."));
+    info.appendChild(el("span", null, "visualizações"));
     a.appendChild(img); a.appendChild(info); grade.appendChild(a);
   });
 
