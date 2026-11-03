@@ -175,6 +175,7 @@ h1 { font-family: var(--display); font-stretch: 112%; font-weight: 850; font-siz
 @media (max-width: 720px) {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
   .card { padding: 14px; }
+  .card .tit { letter-spacing: 0.04em; font-size: 10.5px; }
   .demo { grid-template-columns: minmax(0, 1fr); }
   .sinc { align-items: flex-start; text-align: left; }
 }
@@ -396,7 +397,7 @@ function preencher(d) {
 
   // Resumo (o card de cliques só aparece quando já houver cliques; antes disso entra salvamentos)
   card("cards-resumo", "pessoas", "Seguidores", compacto(r.seguidores));
-  card("cards-resumo", "raio", "Engajamento dos seguidores", dec(r.engajamento_pct, 1) + "%");
+  card("cards-resumo", "raio", "Engajamento", dec(r.engajamento_pct, 1) + "%", "dos seguidores, por post");
   card("cards-resumo", "alvo", "Contas alcançadas", compacto(r.alcance));
   card("cards-resumo", "coracao", "Contas engajadas", compacto(r.contas_engajadas));
   if (r.cliques_link > 0) card("cards-resumo", "clique", "Cliques no link da bio", compacto(r.cliques_link));
@@ -409,14 +410,14 @@ function preencher(d) {
   card("cards-resumo", "balao", "Comentários médios", compacto(r.media_comentarios), "por publicação", true);
 
   // Reels
-  card("cards-reels", "video", "Visualizações médias dos vídeos", compacto(re.media_views), "por reel");
-  card("cards-reels", "relogio", "Tempo médio de visualização (em segundos)", dec(re.tempo_medio_s, 1), "por espectador");
-  card("cards-reels", "ampulheta", "Tempo total de visualização dos reels (horas)", compacto(re.tempo_total_h));
+  card("cards-reels", "video", "Views médias", compacto(re.media_views), "por reel");
+  card("cards-reels", "relogio", "Tempo médio", dec(re.tempo_medio_s, 1) + " s", "assistido por espectador");
+  card("cards-reels", "ampulheta", "Tempo total assistido", compacto(re.tempo_total_h) + " horas", "somando os reels dos últimos 30 dias", true);
 
   // Stories (aparece quando já houver histórico)
   if (st && st.quantidade > 0) {
     var ds = st.desde ? st.desde.split("-") : null;
-    card("cards-stories", "olho", "Visualizações médias dos stories", compacto(st.media_views),
+    card("cards-stories", "olho", "Views médias", compacto(st.media_views),
       "por story" + (ds ? " · média de " + st.quantidade + " stories desde " + ds[2] + "/" + ds[1] : ""), true);
     document.getElementById("secao-stories").hidden = false;
   }
