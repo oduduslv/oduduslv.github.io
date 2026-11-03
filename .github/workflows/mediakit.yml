@@ -1,10 +1,11 @@
-# Atualiza os números do media kit todo dia, buscando direto na API do Instagram.
+# Atualiza os números do media kit a cada 6 horas, buscando direto na API do Instagram.
+# A frequência é para não perder stories: a API só mostra os números deles enquanto estão no ar.
 # Precisa dos secrets IG_ACCESS_TOKEN e IG_USER_ID no repositório.
 name: Atualizar media kit
 
 on:
   schedule:
-    - cron: "0 9 * * *" # 06:00 no horário de Brasília
+    - cron: "0 */6 * * *" # 03h, 09h, 15h e 21h no horário de Brasília
   workflow_dispatch:
 
 permissions:

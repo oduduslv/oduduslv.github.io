@@ -1,24 +1,36 @@
 {
- "atualizado_em": "2026-11-03 15:20",
+ "atualizado_em": "2026-11-03 15:28",
  "perfil": {
   "usuario": "oduduslv",
   "seguidores": 19163,
   "posts": 167
  },
- "ultimos_30_dias": {
+ "resumo": {
+  "seguidores": 19163,
+  "engajamento_pct": 17.08,
   "alcance": 210999,
-  "visualizacoes": 551861,
   "contas_engajadas": 21803,
-  "interacoes": 35648,
-  "visitas_perfil": 13501,
-  "compartilhamentos": 3207,
-  "salvamentos": 5239
+  "cliques_link": 0,
+  "salvamentos": 5239,
+  "publicacoes": 167,
+  "visualizacoes": 552007,
+  "interacoes": 35661,
+  "visitas_perfil": 13504,
+  "media_curtidas": 2179,
+  "media_comentarios": 65,
+  "posts_na_base": 8
  },
- "posts_90_dias": {
-  "quantidade": 20,
-  "mediana_views_reels": 10836,
-  "maior_views": 169963,
-  "engajamento_medio_pct": 10.13
+ "reels": {
+  "quantidade": 8,
+  "media_views": 42895,
+  "tempo_medio_s": 9.3,
+  "tempo_total_h": 1087
+ },
+ "stories": {
+  "quantidade": 6,
+  "media_views": 797,
+  "media_alcance": 635,
+  "desde": "2026-11-02"
  },
  "publico": {
   "genero": [
@@ -40,6 +52,16 @@
   ],
   "idade": [
    {
+    "chave": "13-17",
+    "valor": 58,
+    "pct": 0.3
+   },
+   {
+    "chave": "18-24",
+    "valor": 3389,
+    "pct": 18.0
+   },
+   {
     "chave": "25-34",
     "valor": 9075,
     "pct": 48.3
@@ -48,11 +70,6 @@
     "chave": "35-44",
     "valor": 4545,
     "pct": 24.2
-   },
-   {
-    "chave": "18-24",
-    "valor": 3389,
-    "pct": 18.0
    },
    {
     "chave": "45-54",
@@ -68,13 +85,121 @@
     "chave": "65+",
     "valor": 166,
     "pct": 0.9
-   },
-   {
-    "chave": "13-17",
-    "valor": 58,
-    "pct": 0.3
    }
   ],
+  "idade_por_genero": {
+   "M": [
+    {
+     "chave": "13-17",
+     "valor": 39,
+     "pct": 0.3
+    },
+    {
+     "chave": "18-24",
+     "valor": 2270,
+     "pct": 16.3
+    },
+    {
+     "chave": "25-34",
+     "valor": 6829,
+     "pct": 48.9
+    },
+    {
+     "chave": "35-44",
+     "valor": 3584,
+     "pct": 25.7
+    },
+    {
+     "chave": "45-54",
+     "valor": 873,
+     "pct": 6.3
+    },
+    {
+     "chave": "55-64",
+     "valor": 255,
+     "pct": 1.8
+    },
+    {
+     "chave": "65+",
+     "valor": 117,
+     "pct": 0.8
+    }
+   ],
+   "U": [
+    {
+     "chave": "13-17",
+     "valor": 9,
+     "pct": 0.2
+    },
+    {
+     "chave": "18-24",
+     "valor": 854,
+     "pct": 22.4
+    },
+    {
+     "chave": "25-34",
+     "valor": 1844,
+     "pct": 48.3
+    },
+    {
+     "chave": "35-44",
+     "valor": 751,
+     "pct": 19.7
+    },
+    {
+     "chave": "45-54",
+     "valor": 237,
+     "pct": 6.2
+    },
+    {
+     "chave": "55-64",
+     "valor": 83,
+     "pct": 2.2
+    },
+    {
+     "chave": "65+",
+     "valor": 41,
+     "pct": 1.1
+    }
+   ],
+   "F": [
+    {
+     "chave": "13-17",
+     "valor": 10,
+     "pct": 1.0
+    },
+    {
+     "chave": "18-24",
+     "valor": 265,
+     "pct": 26.4
+    },
+    {
+     "chave": "25-34",
+     "valor": 402,
+     "pct": 40.0
+    },
+    {
+     "chave": "35-44",
+     "valor": 210,
+     "pct": 20.9
+    },
+    {
+     "chave": "45-54",
+     "valor": 90,
+     "pct": 9.0
+    },
+    {
+     "chave": "55-64",
+     "valor": 19,
+     "pct": 1.9
+    },
+    {
+     "chave": "65+",
+     "valor": 8,
+     "pct": 0.8
+    }
+   ]
+  },
   "paises": [
    {
     "chave": "BR",
@@ -100,6 +225,11 @@
     "chave": "PE",
     "valor": 416,
     "pct": 2.3
+   },
+   {
+    "chave": "PH",
+    "valor": 286,
+    "pct": 1.6
    }
   ],
   "cidades": [
@@ -127,81 +257,104 @@
     "chave": "Lagoa Santa, Minas Gerais",
     "valor": 325,
     "pct": 5.7
+   },
+   {
+    "chave": "Manaus, Amazonas",
+    "valor": 249,
+    "pct": 4.4
    }
   ]
  },
- "melhores_posts": [
+ "recentes": [
   {
    "capa": "capas/1.jpg",
-   "link": "https://www.instagram.com/reel/DfCxRyBRRBU/",
-   "data": "2026-10-28",
-   "legenda": "Esse é meu protocolo atual! Se gostou, já me segue para não perder os próximos episódios d",
-   "views": 169963,
-   "alcance": 123653,
-   "curtidas": 7169,
-   "comentarios": 198,
-   "compartilhamentos": 1862,
-   "salvamentos": 3038
+   "link": "https://www.instagram.com/reel/DfRyg8Nx1md/",
+   "data": "2026-11-03",
+   "legenda": "E aqui, eu te mostro na prática como funciona! 🫡",
+   "views": 6387,
+   "curtidas": 389,
+   "comentarios": 6
   },
   {
    "capa": "capas/2.jpg",
-   "link": "https://www.instagram.com/reel/Dexnq8Lx14x/",
-   "data": "2026-10-21",
-   "legenda": "Vou fazer uma série de vídeos mostrando TUDO o que estou fazendo durante os próximos 30 di",
-   "views": 95268,
-   "alcance": 73259,
-   "curtidas": 5789,
-   "comentarios": 138,
-   "compartilhamentos": 632,
-   "salvamentos": 1242
+   "link": "https://www.instagram.com/reel/DfGChqeR1vB/",
+   "data": "2026-10-29",
+   "legenda": "Esse foi o meu 2º pedido na @darklabsuplementos ☠️🏴‍☠️",
+   "views": 3627,
+   "curtidas": 186,
+   "comentarios": 10
   },
   {
    "capa": "capas/3.jpg",
-   "link": "https://www.instagram.com/reel/Db9VnIgxrDy/",
-   "data": "2026-08-12",
-   "legenda": "Quem sonha muito tem que trabalhar dobrado...",
-   "views": 52686,
-   "alcance": 37840,
-   "curtidas": 2069,
-   "comentarios": 51,
-   "compartilhamentos": 129,
-   "salvamentos": 339
+   "link": "https://www.instagram.com/reel/DfCxRyBRRBU/",
+   "data": "2026-10-28",
+   "legenda": "Esse é meu protocolo atual! Se gostou, já me segue para não perder os próximos episódios d",
+   "views": 170002,
+   "curtidas": 7173,
+   "comentarios": 198
   },
   {
    "capa": "capas/4.jpg",
-   "link": "https://www.instagram.com/p/DbwN10dEVqH/",
-   "data": "2026-08-07",
-   "legenda": "Treinão de Upper 2 pós campeonato… 😉✍️",
-   "views": 47331,
-   "alcance": 21000,
-   "curtidas": 837,
-   "comentarios": 15,
-   "compartilhamentos": 74,
-   "salvamentos": 304
+   "link": "https://www.instagram.com/reel/De9ud65RqfU/",
+   "data": "2026-10-26",
+   "legenda": "Deposite suas esperanças em quem realmente pode fazer a diferença!",
+   "views": 8111,
+   "curtidas": 279,
+   "comentarios": 5
   },
   {
    "capa": "capas/5.jpg",
-   "link": "https://www.instagram.com/reel/Dc9RQpTxjve/",
-   "data": "2026-09-06",
-   "legenda": "Acho que não preciso falar nada, ne?! 😅",
-   "views": 47031,
-   "alcance": 30173,
-   "curtidas": 2868,
-   "comentarios": 49,
-   "compartilhamentos": 310,
-   "salvamentos": 652
+   "link": "https://www.instagram.com/reel/Dexnq8Lx14x/",
+   "data": "2026-10-21",
+   "legenda": "Vou fazer uma série de vídeos mostrando TUDO o que estou fazendo durante os próximos 30 di",
+   "views": 95275,
+   "curtidas": 5789,
+   "comentarios": 138
   },
   {
    "capa": "capas/6.jpg",
    "link": "https://www.instagram.com/reel/DerVkkvxQCi/",
    "data": "2026-10-19",
    "legenda": "🤣🤣",
-   "views": 40191,
-   "alcance": 31359,
-   "curtidas": 2633,
-   "comentarios": 100,
-   "compartilhamentos": 397,
-   "salvamentos": 489
+   "views": 40196,
+   "curtidas": 2634,
+   "comentarios": 100
+  },
+  {
+   "capa": "capas/7.jpg",
+   "link": "https://www.instagram.com/reel/DeUM2WsRFA2/",
+   "data": "2026-10-10",
+   "legenda": "Use 🏷️ODUDU na @darklabsuplementos",
+   "views": 12016,
+   "curtidas": 606,
+   "comentarios": 63
+  },
+  {
+   "capa": "capas/8.jpg",
+   "link": "https://www.instagram.com/reel/DeNHzwZtLZ2/",
+   "data": "2026-10-07",
+   "legenda": "😉🤟🏽",
+   "views": 7546,
+   "curtidas": 378,
+   "comentarios": 3
+  },
+  {
+   "capa": "capas/9.jpg",
+   "link": "https://www.instagram.com/reel/Dd7XwN1xo_V/",
+   "data": "2026-09-30",
+   "legenda": "Se você não cultiva nenhum desses hábitos, ta deixando ganhos na mesa…",
+   "views": 6125,
+   "curtidas": 268,
+   "comentarios": 10
+  },
+  {
+   "capa": "capas/10.jpg",
+   "link": "https://www.instagram.com/reel/DdrfCdhRvAN/",
+   "data": "2026-09-24",
+   "legenda": "Agora não tem mais desculpa pra comer errado… 😉🫡",
+   "views": 10224,
+   "curtidas": 510,
+   "comentarios": 34
   }
  ]
 }

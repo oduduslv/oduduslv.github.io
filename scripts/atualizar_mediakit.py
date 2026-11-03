@@ -1,7 +1,10 @@
 """Busca os números do @oduduslv na API do Instagram e grava o media kit.
 
-Gera `mediakit/dados.json` e as capas dos melhores posts em `mediakit/capas/`.
-Roda todo dia pelo GitHub Actions (com IG_ACCESS_TOKEN e IG_USER_ID nos secrets)
+Gera `mediakit/dados.json`, as capas das postagens recentes em `mediakit/capas/`
+e mantém `mediakit/stories.json`, o histórico dos stories (a API só mostra os
+números de um story enquanto ele está no ar, então cada execução guarda o que vê).
+
+Roda a cada 6 horas pelo GitHub Actions (com IG_ACCESS_TOKEN e IG_USER_ID nos secrets)
 ou localmente, passando o caminho de um .env: python scripts/atualizar_mediakit.py caminho/.env
 
 Usa só a biblioteca padrão do Python, e o token nunca é impresso.
@@ -21,8 +24,9 @@ import urllib.request
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 SAIDA = RAIZ / "mediakit"
 CAPAS = SAIDA / "capas"
+HISTORICO_STORIES = SAIDA / "stories.json"
 VERSAO = "v23.0"
-TOP_POSTS = 6
+RECENTES = 10
 JANELA_POSTS_DIAS = 90
 
 
@@ -60,24 +64,37 @@ def total(metricas: str, since: int, until: int) -> dict[str, int]:
 
 
 def demografia(quebra: str) -> list[dict]:
+    """Lista de {chave, valor, pct}; com quebra "age,gender" a chave vira "idade|genero"."""
     dados = api(f"{USER}/insights", metric="follower_demographics", period="lifetime",
                 metric_type="total_value", breakdown=quebra, timeframe="last_30_days")
     linhas = []
     for m in dados.get("data", []):
         for b in m.get("total_value", {}).get("breakdowns", []):
             for r in b.get("results", []):
-                linhas.append({"chave": r["dimension_values"][0], "valor": r["value"]})
+                linhas.append({"chave": "|".join(r["dimension_values"]), "valor": r["value"]})
     soma = sum(l["valor"] for l in linhas) or 1
     for l in linhas:
         l["pct"] = round(100 * l["valor"] / soma, 1)
     return sorted(linhas, key=lambda l: -l["valor"])
 
 
+def idade_por_genero() -> dict[str, list[dict]]:
+    por = {}
+    for l in demografia("age,gender"):
+        idade, genero = l["chave"].split("|")
+        por.setdefault(genero, []).append({"chave": idade, "valor": l["valor"]})
+    for genero, itens in por.items():
+        soma = sum(i["valor"] for i in itens) or 1
+        for i in itens:
+            i["pct"] = round(100 * i["valor"] / soma, 1)
+        itens.sort(key=lambda i: i["chave"])
+    return por
+
+
 def metricas_post(media: dict) -> dict:
-    tipo = media.get("media_product_type")
     conjunto = "reach,views,likes,comments,shares,saved,total_interactions"
-    if tipo == "REELS":
-        conjunto += ",ig_reels_avg_watch_time"
+    if media.get("media_product_type") == "REELS":
+        conjunto += ",ig_reels_avg_watch_time,ig_reels_video_view_total_time"
     try:
         dados = api(f"{media['id']}/insights", metric=conjunto)
     except RuntimeError:
@@ -90,13 +107,44 @@ def baixar(url: str, destino: pathlib.Path) -> None:
         destino.write_bytes(r.read())
 
 
+def media(valores: list[float]) -> float:
+    return statistics.mean(valores) if valores else 0
+
+
+def atualizar_stories(agora: dt.datetime) -> dict:
+    historico = json.loads(HISTORICO_STORIES.read_text(encoding="utf-8")) if HISTORICO_STORIES.exists() else {}
+    for s in api(f"{USER}/stories", fields="id,timestamp").get("data", []):
+        try:
+            m = {x["name"]: (x.get("values") or [{}])[0].get("value", 0)
+                 for x in api(f"{s['id']}/insights", metric="reach,views").get("data", [])}
+        except RuntimeError:
+            continue
+        antigo = historico.get(s["id"], {})
+        historico[s["id"]] = {
+            "data": s["timestamp"][:10],
+            "views": max(m.get("views", 0), antigo.get("views", 0)),
+            "alcance": max(m.get("reach", 0), antigo.get("alcance", 0)),
+        }
+    corte = (agora - dt.timedelta(days=30)).strftime("%Y-%m-%d")
+    historico = {k: v for k, v in historico.items() if v["data"] >= corte}
+    HISTORICO_STORIES.write_text(json.dumps(historico, indent=1), encoding="utf-8")
+    views = [v["views"] for v in historico.values()]
+    return {
+        "quantidade": len(views),
+        "media_views": int(media(views)),
+        "media_alcance": int(media([v["alcance"] for v in historico.values()])),
+        "desde": min((v["data"] for v in historico.values()), default=None),
+    }
+
+
 def main() -> None:
     agora = dt.datetime.now(dt.timezone.utc)
     ate = int(agora.timestamp())
     desde = int((agora - dt.timedelta(days=30)).timestamp())
 
     conta = api(USER, fields="username,followers_count,media_count")
-    trinta = total("reach,views,accounts_engaged,total_interactions,likes,comments,shares,saves,profile_views", desde, ate)
+    trinta = total("reach,views,accounts_engaged,total_interactions,likes,comments,shares,saves,"
+                   "profile_views,website_clicks", desde, ate)
 
     # Posts dos últimos 90 dias com as métricas de cada um
     limite = agora - dt.timedelta(days=JANELA_POSTS_DIAS)
@@ -110,69 +158,76 @@ def main() -> None:
             if quando < limite:
                 fim = True
                 break
+            m["quando"] = quando
             m["metricas"] = metricas_post(m)
             posts.append(m)
         prox = None if fim or "next" not in pagina.get("paging", {}) else f"{USER}/media"
         params["after"] = pagina.get("paging", {}).get("cursors", {}).get("after")
 
-    reels = [p for p in posts if p.get("media_product_type") == "REELS"]
-    views_reels = [p["metricas"].get("views", 0) for p in reels]
-    interacoes = [p["metricas"].get("total_interactions", 0) for p in posts]
+    # Médias com os posts dos últimos 30 dias; se não houver, usa os 90 dias
+    corte30 = agora - dt.timedelta(days=30)
+    base = [p for p in posts if p["quando"] >= corte30] or posts
+    reels = [p for p in base if p.get("media_product_type") == "REELS"]
     seguidores = conta["followers_count"] or 1
+    interacoes = [p["metricas"].get("total_interactions", 0) for p in base]
 
-    melhores = sorted(posts, key=lambda p: -(p["metricas"].get("views") or p["metricas"].get("reach", 0)))[:TOP_POSTS]
     CAPAS.mkdir(parents=True, exist_ok=True)
     for velho in CAPAS.glob("*.jpg"):
         velho.unlink()
-    top = []
-    for i, p in enumerate(melhores, 1):
+    recentes = []
+    for i, p in enumerate(posts[:RECENTES], 1):
         url = p.get("thumbnail_url") or p.get("media_url")
         nome = f"{i}.jpg"
         if url:
             baixar(url, CAPAS / nome)
-        legenda = (p.get("caption") or "").split("\n")[0].strip()
-        top.append({
+        recentes.append({
             "capa": f"capas/{nome}",
             "link": p["permalink"],
             "data": p["timestamp"][:10],
-            "legenda": legenda[:90],
-            "views": p["metricas"].get("views", 0),
-            "alcance": p["metricas"].get("reach", 0),
+            "legenda": (p.get("caption") or "").split("\n")[0].strip()[:90],
+            "views": p["metricas"].get("views") or p["metricas"].get("reach", 0),
             "curtidas": p["metricas"].get("likes", 0),
             "comentarios": p["metricas"].get("comments", 0),
-            "compartilhamentos": p["metricas"].get("shares", 0),
-            "salvamentos": p["metricas"].get("saved", 0),
         })
 
     dados = {
         "atualizado_em": agora.astimezone(dt.timezone(dt.timedelta(hours=-3))).strftime("%Y-%m-%d %H:%M"),
         "perfil": {"usuario": conta["username"], "seguidores": conta["followers_count"], "posts": conta["media_count"]},
-        "ultimos_30_dias": {
+        "resumo": {
+            "seguidores": conta["followers_count"],
+            "engajamento_pct": round(100 * media(interacoes) / seguidores, 2),
             "alcance": trinta.get("reach", 0),
-            "visualizacoes": trinta.get("views", 0),
             "contas_engajadas": trinta.get("accounts_engaged", 0),
+            "cliques_link": trinta.get("website_clicks", 0),
+            "salvamentos": trinta.get("saves", 0),
+            "publicacoes": conta["media_count"],
+            "visualizacoes": trinta.get("views", 0),
             "interacoes": trinta.get("total_interactions", 0),
             "visitas_perfil": trinta.get("profile_views", 0),
-            "compartilhamentos": trinta.get("shares", 0),
-            "salvamentos": trinta.get("saves", 0),
+            "media_curtidas": int(media([p["metricas"].get("likes", 0) for p in base])),
+            "media_comentarios": int(media([p["metricas"].get("comments", 0) for p in base])),
+            "posts_na_base": len(base),
         },
-        "posts_90_dias": {
-            "quantidade": len(posts),
-            "mediana_views_reels": int(statistics.median(views_reels)) if views_reels else 0,
-            "maior_views": max(views_reels) if views_reels else 0,
-            "engajamento_medio_pct": round(100 * statistics.mean(interacoes) / seguidores, 2) if interacoes else 0,
+        "reels": {
+            "quantidade": len(reels),
+            "media_views": int(media([p["metricas"].get("views", 0) for p in reels])),
+            "tempo_medio_s": round(media([p["metricas"].get("ig_reels_avg_watch_time", 0) for p in reels]) / 1000, 1),
+            "tempo_total_h": round(sum(p["metricas"].get("ig_reels_video_view_total_time", 0) for p in reels) / 3.6e6),
         },
+        "stories": atualizar_stories(agora),
         "publico": {
             "genero": demografia("gender"),
-            "idade": demografia("age"),
-            "paises": demografia("country")[:5],
-            "cidades": demografia("city")[:5],
+            "idade": sorted(demografia("age"), key=lambda l: l["chave"]),
+            "idade_por_genero": idade_por_genero(),
+            "paises": demografia("country")[:6],
+            "cidades": demografia("city")[:6],
         },
-        "melhores_posts": top,
+        "recentes": recentes,
     }
     SAIDA.mkdir(exist_ok=True)
     (SAIDA / "dados.json").write_text(json.dumps(dados, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"ok: {len(posts)} posts, {conta['followers_count']} seguidores, {len(top)} capas")
+    print(f"ok: {len(posts)} posts, {conta['followers_count']} seguidores, "
+          f"{len(recentes)} capas, {dados['stories']['quantidade']} stories no histórico")
 
 
 if __name__ == "__main__":

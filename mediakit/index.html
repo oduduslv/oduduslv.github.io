@@ -4,22 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Media kit · @oduduslv</title>
-<meta name="description" content="Media kit do @oduduslv: alcance, público e melhores posts, atualizados todo dia com os dados do Instagram.">
+<meta name="description" content="Media kit do @oduduslv: números do Instagram sincronizados, público e postagens recentes.">
 <meta property="og:title" content="Media kit · @oduduslv">
-<meta property="og:description" content="Alcance, público e melhores posts, atualizados todo dia.">
-<meta property="og:image" content="../foto.jpg">
+<meta property="og:description" content="Números do Instagram sincronizados, público e postagens recentes.">
+<meta property="og:image" content="capa-topo.jpg">
 <meta name="theme-color" content="#060D1A">
 <link rel="icon" href="../foto.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
-/* Layout: mesma identidade da página de links (azul quase preto); números grandes primeiro, depois público e posts.
-   Todos os números vêm de dados.json, que o GitHub atualiza todo dia. */
+/* Layout: a organização do media kit do Beacons (capa, @, categorias, seguidores, sobre mim, resumo,
+   Reels, Stories, público, postagens recentes) com a identidade do @oduduslv (azul quase preto).
+   Todos os números vêm de dados.json, que o GitHub atualiza a cada 6 horas. */
 :root {
   --bg: #060D1A;
   --glow: #10284B;
   --surface: #0B1729;
+  --surface-2: #0E1D33;
   --ink: #E6ECF5;
   --muted: #8091AB;
   --line: #19273F;
@@ -27,6 +29,7 @@
   --btn: #2F6FE4;
   --btn-ink: #FFFFFF;
   --barra: #2F6FE4;
+  --barra-2: #7FA8EE;
   --barra-fundo: #13213A;
   --display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
   --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
@@ -38,174 +41,264 @@
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
-  margin: 0;
-  background: radial-gradient(120% 50% at 0% 0%, var(--glow) 0%, transparent 60%) no-repeat, var(--bg);
-  color: var(--ink); min-height: 100vh;
-  font-family: var(--body); font-size: 15px; line-height: 1.5;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 32px 48px;
-  -webkit-font-smoothing: antialiased;
+  margin: 0; background: var(--bg); color: var(--ink); min-height: 100vh;
+  font-family: var(--body); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; }
 a { color: inherit; }
-.wrap { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+.miolo {
+  max-width: 980px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
 
-.voltar { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; align-self: flex-start; }
-.voltar:hover { color: var(--ink); }
+/* Capa */
+.capa { position: relative; height: clamp(170px, 30vw, 300px); overflow: hidden; }
+.capa img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; display: block; }
+.capa::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(6, 13, 26, 0.15) 0%, rgba(6, 13, 26, 0.55) 60%, var(--bg) 100%); }
+.voltar {
+  position: absolute; z-index: 2; top: calc(14px + env(safe-area-inset-top, 0px)); left: max(16px, env(safe-area-inset-left, 0px));
+  font-family: var(--mono); font-size: 12px; text-decoration: none; color: var(--ink);
+  background: rgba(6, 13, 26, 0.6); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px;
+}
+.voltar:hover { border-color: var(--accent); }
 
-/* Topo */
-.topo { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: center; }
-.foto { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--accent); }
-.olho { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 4px; }
-h1 { font-family: var(--display); font-stretch: 112%; font-weight: 850; font-size: clamp(26px, 6vw, 34px); line-height: 1; margin: 0; }
-.quem { color: var(--muted); margin: 8px 0 0; max-width: 46ch; }
+/* Cabeçalho */
+.cabeca { position: relative; margin-top: -64px; z-index: 1; display: flex; flex-direction: column; gap: 16px; }
+.foto { width: 118px; height: 118px; border-radius: 50%; object-fit: cover; border: 4px solid var(--bg); box-shadow: 0 0 0 2px var(--accent); }
+h1 { font-family: var(--display); font-stretch: 112%; font-weight: 850; font-size: clamp(30px, 6vw, 40px); line-height: 1; margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.chips li {
+  font-family: var(--display); font-stretch: 100%; font-weight: 700; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase;
+  border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; background: var(--surface);
+}
 
-/* Seções */
-.secao { display: flex; flex-direction: column; gap: 12px; }
-.rotulo { font-family: var(--display); font-stretch: 112%; font-weight: 750; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 2px; }
-.caixa { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+.rotulo { font-family: var(--display); font-stretch: 105%; font-weight: 700; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.total b { display: block; font-family: var(--display); font-stretch: 112%; font-weight: 850; font-size: clamp(34px, 8vw, 46px); line-height: 1.05; font-variant-numeric: tabular-nums; }
+.redes { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 8px; }
+.redes a { display: inline-flex; align-items: center; gap: 7px; text-decoration: none; font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums; }
+.redes a:hover { color: var(--accent); }
+.redes svg { width: 20px; height: 20px; flex: none; }
 
-/* Números grandes */
-.grandes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.num { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.num b { font-family: var(--display); font-stretch: 112%; font-weight: 850; font-size: clamp(26px, 7vw, 34px); line-height: 1; font-variant-numeric: tabular-nums; }
-.num span { color: var(--muted); font-size: 13px; line-height: 1.35; }
-.num.destaque b { color: var(--accent); }
-.menores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 12px; margin: 0; }
-.menores div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.menores dt { order: 2; color: var(--muted); font-size: 12.5px; line-height: 1.35; }
-.menores dd { order: 1; margin: 0; font-family: var(--display); font-stretch: 105%; font-weight: 800; font-size: 20px; font-variant-numeric: tabular-nums; }
+.sobre p { margin: 8px 0 0; font-size: 16.5px; line-height: 1.65; max-width: 70ch; }
+
+/* Abas de rede + cabeçalho do Instagram */
+.abas { display: flex; gap: 8px; margin-top: 12px; }
+.aba { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 10px; font-weight: 700; font-size: 14px; text-decoration: none; color: var(--muted); }
+.aba svg { width: 20px; height: 20px; }
+.aba.ativa { background: var(--ink); color: var(--bg); }
+.aba:not(.ativa):hover { color: var(--ink); }
+.rede-topo { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px 20px; flex-wrap: wrap; }
+.rede-topo h2 { font-family: var(--display); font-stretch: 112%; font-weight: 850; font-size: clamp(28px, 5vw, 36px); line-height: 1; margin: 0; }
+.rede-topo .usuario { font-family: var(--mono); font-size: 12.5px; color: var(--muted); text-transform: uppercase; margin-top: 6px; display: block; }
+.sinc { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; text-align: right; }
+.selo-sinc { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+.selo-sinc svg { width: 14px; height: 14px; color: var(--accent); }
+.sinc small { font-size: 12px; color: var(--muted); }
+
+/* Cards de números */
+.bloco { display: flex; flex-direction: column; gap: 14px; }
+.bloco h3 { font-family: var(--display); font-stretch: 105%; font-weight: 750; font-size: 16px; margin: 0; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card.largo { grid-column: 1 / -1; }
+.card .tit { display: flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 750; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.card .tit svg { width: 18px; height: 18px; flex: none; color: var(--accent); }
+.card .tit span { flex: 1; min-width: 0; }
+.card .tit .ok { width: 16px; height: 16px; color: var(--muted); }
+.card b { font-family: var(--display); font-stretch: 105%; font-weight: 850; font-size: clamp(26px, 5vw, 34px); line-height: 1; font-variant-numeric: tabular-nums; }
+.card small { font-size: 12.5px; color: var(--muted); margin-top: -4px; }
 
 /* Público */
-.publico { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.publico .caixa { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-.publico h3 { font-family: var(--display); font-stretch: 105%; font-weight: 750; font-size: 14px; margin: 0; }
-.barras { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.barras li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; font-size: 13px; }
+.demo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.demo .card { gap: 14px; }
+.rosca { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 8px 0 4px; }
+.rosca .anel { width: 168px; height: 168px; border-radius: 50%; position: relative; }
+.rosca .anel::after { content: ""; position: absolute; inset: 30px; border-radius: 50%; background: var(--surface); }
+.rosca .meio { position: absolute; inset: 0; display: grid; place-items: center; z-index: 1; font-family: var(--display); font-weight: 850; font-size: 22px; }
+.legenda { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 6px 10px; align-items: center; font-weight: 700; font-size: 14px; }
+.legenda i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+.legenda .v { font-variant-numeric: tabular-nums; text-align: right; }
+.nota { font-size: 12px; color: var(--muted); text-align: center; margin: 0; }
+.filtros { display: flex; gap: 6px; }
+.filtros button {
+  font: 700 12.5px var(--body); color: var(--ink); background: transparent; border: 1px solid var(--line);
+  border-radius: 999px; padding: 6px 14px; cursor: pointer;
+}
+.filtros button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.barras { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.barras li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; font-size: 13px; }
 .barras .nome { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.barras .pct { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.barras .trilho { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--barra-fundo); overflow: hidden; }
-.barras .trilho i { display: block; height: 100%; border-radius: 3px; background: var(--barra); }
+.barras .nome em { font-style: normal; font-family: var(--mono); font-size: 10.5px; color: var(--muted); margin-right: 6px; }
+.barras .pct { font-weight: 800; font-variant-numeric: tabular-nums; }
+.barras .trilho { grid-column: 1 / -1; height: 8px; border-radius: 4px; background: var(--barra-fundo); overflow: hidden; }
+.barras .trilho i { display: block; height: 100%; border-radius: 4px; background: var(--barra); }
 
-/* Posts */
-.posts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-.post { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; background: var(--surface); text-decoration: none; }
+/* Postagens recentes */
+.trilha { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-color: var(--line) transparent; }
+.post { position: relative; flex: none; width: clamp(160px, 42vw, 220px); aspect-ratio: 9 / 15; border-radius: 10px; overflow: hidden; background: var(--surface); scroll-snap-align: start; text-decoration: none; }
 .post img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.post::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(4, 10, 24, 0.88), rgba(4, 10, 24, 0) 55%); }
-.post .info { position: absolute; left: 8px; right: 8px; bottom: 8px; z-index: 1; display: flex; flex-direction: column; gap: 1px; }
-.post .info b { font-family: var(--display); font-stretch: 105%; font-weight: 800; font-size: 17px; line-height: 1.1; font-variant-numeric: tabular-nums; }
-.post .info span { font-family: var(--mono); font-size: 10.5px; color: #C9D4E6; }
+.post::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(4, 10, 24, 0.85), rgba(4, 10, 24, 0) 45%); }
+.post .play { position: absolute; z-index: 1; top: 50%; left: 50%; width: 44px; height: 44px; transform: translate(-50%, -50%); color: #fff; opacity: 0.9; }
+.post .stats { position: absolute; z-index: 1; left: 8px; right: 8px; bottom: 8px; display: flex; gap: 5px; }
+.post .stats span {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 4px; min-width: 0;
+  background: rgba(6, 13, 26, 0.72); border-radius: 999px; padding: 5px 4px; font-size: 11px; font-weight: 700; color: #fff; white-space: nowrap;
+}
+.post .stats svg { width: 12px; height: 12px; flex: none; opacity: 0.8; }
+.post:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* Parcerias e formatos */
+/* Parcerias e contato */
 .lista-simples { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-.lista-simples li { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 13px; background: var(--surface); }
-
-/* Contato */
-.contato { display: flex; flex-direction: column; gap: 12px; }
-.email { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.lista-simples li { border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 13.5px; background: var(--surface); }
+.email { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .email span { font-family: var(--mono); font-size: 14px; overflow-wrap: anywhere; user-select: all; }
 .btns { display: flex; gap: 8px; }
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px; text-decoration: none; cursor: pointer;
-  font: 650 14px var(--body); border-radius: 10px; padding: 10px 14px; border: 1px solid var(--line); background: transparent; color: var(--ink);
+  display: inline-flex; align-items: center; justify-content: center; text-decoration: none; cursor: pointer;
+  font: 700 14px var(--body); border-radius: 10px; padding: 10px 16px; border: 1px solid var(--line); background: transparent; color: var(--ink);
 }
 .btn.cheio { background: var(--btn); color: var(--btn-ink); border-color: var(--btn); }
-.btn:focus-visible, .post:focus-visible, .voltar:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn:focus-visible, .aba:focus-visible, .voltar:focus-visible, .filtros button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-.rodape { text-align: center; color: var(--muted); font-family: var(--mono); font-size: 11.5px; line-height: 1.6; }
-.carregando .num b, .carregando .menores dd { color: var(--line); }
+.pilha { display: flex; flex-direction: column; gap: 44px; padding-block: 0 56px; }
+.rodape { text-align: center; color: var(--muted); font-family: var(--mono); font-size: 11.5px; line-height: 1.6; margin: 0; }
 
 .toast {
   position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px);
-  background: var(--ink); color: var(--bg); font: 650 14px var(--body); padding: 10px 16px; border-radius: 999px;
+  background: var(--ink); color: var(--bg); font: 700 14px var(--body); padding: 10px 16px; border-radius: 999px;
   opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
 }
 .toast.on { opacity: 1; transform: translate(-50%, 0); }
 @media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
 
-@media (min-width: 600px) {
-  .grandes { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .menores { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-@media (max-width: 420px) {
-  .publico { grid-template-columns: minmax(0, 1fr); }
-  .topo { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; }
-  .quem { margin-inline: auto; }
+@media (max-width: 720px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .card { padding: 14px; }
+  .demo { grid-template-columns: minmax(0, 1fr); }
+  .sinc { align-items: flex-start; text-align: left; }
 }
 </style>
 </head>
 <body>
-<main class="wrap carregando" id="kit">
-  <a class="voltar" href="../">← oduduslv.github.io</a>
 
-  <header class="topo">
-    <img class="foto" src="../foto.jpg" alt="Eduardo Silva" width="92" height="92">
-    <div>
-      <p class="olho">Media kit</p>
-      <h1>@oduduslv</h1>
-      <!-- TROQUE AQUI: a apresentação para as marcas -->
-      <p class="quem">Eduardo Silva, atleta natural e 3x campeão PNBA. Mostro minha rotina real de treino, dieta e mentalidade, sem filtro.</p>
+<div class="capa">
+  <img src="capa-topo.jpg" alt="">
+  <a class="voltar" href="../">← oduduslv.github.io</a>
+</div>
+
+<main class="miolo pilha" id="kit">
+  <header class="cabeca">
+    <img class="foto" src="../foto.jpg" alt="Eduardo Silva" width="118" height="118">
+    <h1>@oduduslv</h1>
+    <!-- TROQUE AQUI: as categorias do seu conteúdo -->
+    <ul class="chips">
+      <li>Musculação</li>
+      <li>Corrida</li>
+      <li>Estilo de vida</li>
+      <li>Saúde</li>
+      <li>Desenvolvimento pessoal</li>
+      <li>Criador de conteúdo</li>
+    </ul>
+    <div class="total">
+      <p class="rotulo">Total de seguidores</p>
+      <b id="total">—</b>
+      <div class="redes">
+        <a href="https://www.instagram.com/oduduslv/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+          <span id="seg-ig">—</span>
+        </a>
+        <a href="https://www.tiktok.com/@oduduslv" target="_blank" rel="noopener" id="link-tt">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.4 2.6 2.2 4.4 5 4.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span id="seg-tt">@oduduslv</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <section class="secao" aria-labelledby="r-numeros">
-    <h2 class="rotulo" id="r-numeros">Últimos 30 dias</h2>
-    <div class="grandes">
-      <div class="num destaque"><b data-campo="seguidores">—</b><span>seguidores</span></div>
-      <div class="num"><b data-campo="alcance">—</b><span>contas alcançadas</span></div>
-      <div class="num"><b data-campo="visualizacoes">—</b><span>visualizações</span></div>
-      <div class="num"><b data-campo="engajamento">—</b><span>engajamento médio por post</span></div>
+  <section class="sobre" aria-labelledby="r-sobre">
+    <h2 class="rotulo" id="r-sobre">Sobre mim</h2>
+    <!-- TROQUE AQUI: o seu texto de apresentação -->
+    <p>Meu nome é Eduardo Silva, tenho 18 anos e sou atleta natural, 3x campeão PNBA. No meu perfil eu mostro a minha rotina real de treino, dieta e mentalidade, sem filtro, e agora também o treino híbrido, juntando musculação e corrida.</p>
+    <p>Meu objetivo é provar no dia a dia que disciplina vale mais que motivação, e inspirar quem me acompanha a construir corpo e mente com constância. Hoje sou parceiro da Dark Lab e da Alpha Co.</p>
+  </section>
+
+  <section class="bloco" aria-labelledby="r-ig">
+    <div class="abas" role="list">
+      <span class="aba ativa" role="listitem">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg>
+        oduduslv
+      </span>
+      <a class="aba" role="listitem" href="https://www.tiktok.com/@oduduslv" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.4 2.6 2.2 4.4 5 4.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        oduduslv
+      </a>
     </div>
-    <div class="caixa">
-      <dl class="menores">
-        <div><dt>views medianas por reel</dt><dd data-campo="mediana">—</dd></div>
-        <div><dt>maior reel dos últimos 90 dias</dt><dd data-campo="maior">—</dd></div>
-        <div><dt>contas que interagiram</dt><dd data-campo="engajadas">—</dd></div>
-        <div><dt>salvamentos e compartilhamentos</dt><dd data-campo="salvos">—</dd></div>
-      </dl>
+    <div class="rede-topo">
+      <div><h2 id="r-ig">Instagram</h2><span class="usuario">@oduduslv</span></div>
+      <div class="sinc">
+        <span class="selo-sinc"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M5.2 8.2l1.9 1.9 3.8-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="sinc-txt">Sincronizado com o Instagram</span></span>
+        <small id="sinc-sub">Dados dos últimos 30 dias</small>
+      </div>
     </div>
   </section>
 
-  <section class="secao" aria-labelledby="r-publico">
-    <h2 class="rotulo" id="r-publico">Quem me acompanha</h2>
-    <div class="publico">
-      <div class="caixa"><h3>Gênero</h3><ul class="barras" id="genero"></ul></div>
-      <div class="caixa"><h3>Idade</h3><ul class="barras" id="idade"></ul></div>
-      <div class="caixa"><h3>Países</h3><ul class="barras" id="paises"></ul></div>
-      <div class="caixa"><h3>Cidades</h3><ul class="barras" id="cidades"></ul></div>
+  <section class="bloco" aria-labelledby="r-resumo">
+    <h3 id="r-resumo">Resumo</h3>
+    <div class="cards" id="cards-resumo"></div>
+  </section>
+
+  <section class="bloco" aria-labelledby="r-reels">
+    <h3 id="r-reels">Reels</h3>
+    <div class="cards" id="cards-reels"></div>
+  </section>
+
+  <section class="bloco" aria-labelledby="r-stories" id="secao-stories" hidden>
+    <h3 id="r-stories">Stories</h3>
+    <div class="cards" id="cards-stories"></div>
+  </section>
+
+  <section class="bloco" aria-labelledby="r-demo">
+    <h3 id="r-demo">Dados demográficos do público</h3>
+    <div class="demo">
+      <div class="card">
+        <div class="tit"><span>Gênero</span></div>
+        <div class="rosca" id="rosca"></div>
+      </div>
+      <div class="card">
+        <div class="tit"><span>Idade e gênero</span></div>
+        <div class="filtros" role="group" aria-label="Filtrar idade por gênero">
+          <button type="button" id="f-todos" data-g="todos" aria-pressed="true">Todos</button>
+          <button type="button" id="f-homens" data-g="M" aria-pressed="false">Homens</button>
+          <button type="button" id="f-mulheres" data-g="F" aria-pressed="false">Mulheres</button>
+        </div>
+        <ul class="barras" id="idade"></ul>
+      </div>
+      <div class="card">
+        <div class="tit"><span>Principais países</span></div>
+        <ul class="barras" id="paises"></ul>
+      </div>
+      <div class="card">
+        <div class="tit"><span>Principais cidades</span></div>
+        <ul class="barras" id="cidades"></ul>
+      </div>
     </div>
   </section>
 
-  <section class="secao" aria-labelledby="r-posts">
-    <h2 class="rotulo" id="r-posts">Posts com mais visualizações</h2>
-    <div class="posts" id="posts"></div>
+  <section class="bloco" aria-labelledby="r-recentes">
+    <h3 id="r-recentes">Postagens mais recentes</h3>
+    <div class="trilha" id="recentes"></div>
   </section>
 
-  <section class="secao" aria-labelledby="r-parcerias">
-    <h2 class="rotulo" id="r-parcerias">Parcerias</h2>
+  <section class="bloco" aria-labelledby="r-parcerias">
+    <h3 id="r-parcerias">Parcerias</h3>
     <!-- TROQUE AQUI: marcas com quem você já trabalhou -->
-    <ul class="lista-simples">
-      <li>Dark Lab</li>
-      <li>Alpha Co.</li>
-    </ul>
+    <ul class="lista-simples"><li>Dark Lab</li><li>Alpha Co.</li></ul>
   </section>
 
-  <section class="secao" aria-labelledby="r-formatos">
-    <h2 class="rotulo" id="r-formatos">Formatos</h2>
-    <!-- TROQUE AQUI: o que você oferece nas parcerias -->
-    <ul class="lista-simples">
-      <li>Reels</li>
-      <li>Stories</li>
-      <li>Carrossel</li>
-      <li>Cupom e link de afiliado</li>
-      <li>Produto na rotina</li>
-    </ul>
-  </section>
-
-  <section class="secao" aria-labelledby="r-contato">
-    <h2 class="rotulo" id="r-contato">Contato para parcerias</h2>
-    <div class="caixa contato">
+  <section class="bloco" aria-labelledby="r-contato">
+    <h3 id="r-contato">Contato para parcerias</h3>
+    <div class="card">
       <div class="email">
         <span id="email">oduducontatto@gmail.com</span>
         <div class="btns">
@@ -216,33 +309,69 @@ h1 { font-family: var(--display); font-stretch: 112%; font-weight: 850; font-siz
     </div>
   </section>
 
-  <p class="rodape" id="rodape">Números do Instagram, atualizados automaticamente todo dia.</p>
+  <p class="rodape" id="rodape">Números do Instagram, sincronizados automaticamente.</p>
 </main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
+// TROQUE AQUI: seguidores do TikTok (o TikTok não libera esse número para sincronizar). Deixe null para não somar.
+var SEGUIDORES_TIKTOK = null;
+
 var PAISES = { BR: "Brasil", MX: "México", IN: "Índia", US: "Estados Unidos", PE: "Peru", AR: "Argentina", CO: "Colômbia",
   CL: "Chile", PT: "Portugal", ES: "Espanha", IT: "Itália", ID: "Indonésia", PH: "Filipinas", EG: "Egito", PK: "Paquistão",
   BD: "Bangladesh", TR: "Turquia", VE: "Venezuela", EC: "Equador", BO: "Bolívia", PY: "Paraguai", UY: "Uruguai", GB: "Reino Unido",
-  DE: "Alemanha", FR: "França", CA: "Canadá", JP: "Japão", MA: "Marrocos", NG: "Nigéria", DZ: "Argélia", IQ: "Iraque" };
-var GENERO = { M: "Homens", F: "Mulheres", U: "Não informado" };
+  DE: "Alemanha", FR: "França", CA: "Canadá", JP: "Japão", MA: "Marrocos", NG: "Nigéria", DZ: "Argélia", IQ: "Iraque", AO: "Angola" };
+var MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+
+var IC = {
+  pessoas: '<path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM2.5 20c.6-3.3 3.3-5.5 6.5-5.5s5.9 2.2 6.5 5.5M16 4.3a3.5 3.5 0 0 1 0 6.4M18 14.8c1.9.7 3.2 2.6 3.5 5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+  raio: '<path d="M13 3L5 13.5h6L10 21l8-10.5h-6L13 3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
+  alvo: '<circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="1" fill="currentColor"/>',
+  coracao: '<path d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.5 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
+  clique: '<path d="M9 9l11 4-5 1.5L13.5 20 9 9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M5 5l1.5 1.5M3.5 10H5M10 3.5V5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+  camera: '<rect x="3" y="7" width="18" height="13" rx="3" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="13.5" r="3.5" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 7l1.3-2.5h4.4L15.5 7" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
+  olho: '<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/>',
+  toque: '<path d="M4 12h3l2.5-6 4 12 2.5-6H20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
+  perfil: '<circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M6.5 18.2c1.2-2 3.2-3.2 5.5-3.2s4.3 1.2 5.5 3.2" stroke="currentColor" stroke-width="1.7"/>',
+  balao: '<path d="M4 5.5h16v10H9l-5 4v-14z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
+  salvar: '<path d="M6 3.5h12V21l-6-4.5L6 21V3.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
+  video: '<rect x="3" y="6" width="13" height="12" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M16 10.5l5-3v9l-5-3" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
+  relogio: '<circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M12 9v4l2.5 2M9.5 2.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+  ampulheta: '<path d="M6.5 3h11M6.5 21h11M7.5 3c0 5 4.5 6 4.5 9s-4.5 4-4.5 9M16.5 3c0 5-4.5 6-4.5 9s4.5 4 4.5 9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>',
+  ok: '<path d="M8 2.5l5.5 2v4c0 3.5-2.6 5.6-5.5 6.5C5.1 14.1 2.5 12 2.5 8.5v-4L8 2.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.6 8.3l1.6 1.6 3.2-3.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>'
+};
+function svg(nome, vb, cls) { return '<svg viewBox="' + (vb || "0 0 24 24") + '" fill="none" aria-hidden="true"' + (cls ? ' class="' + cls + '"' : "") + ">" + IC[nome] + "</svg>"; }
 
 function compacto(n) {
-  if (n >= 1e6) return (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace(".", ",") + " mi";
+  if (n >= 1e6) return (n / 1e6).toFixed(1).replace(".", ",").replace(",0", "") + (n >= 2e6 ? " milhões" : " milhão");
   if (n >= 1e3) return (n / 1e3).toFixed(n >= 1e5 ? 0 : 1).replace(".", ",").replace(",0", "") + " mil";
   return String(n);
 }
-function pct(v) { return String(v).replace(".", ",") + "%"; }
+function dec(n, c) { return Number(n).toFixed(c).replace(".", ","); }
 function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+
+function card(alvo, icone, titulo, valor, sub, largo) {
+  var c = el("div", "card" + (largo ? " largo" : ""));
+  c.innerHTML = '<div class="tit">' + svg(icone) + "<span></span>" + svg("ok", "0 0 16 16", "ok") + "</div><b></b>" + (sub ? "<small></small>" : "");
+  c.querySelector(".tit span").textContent = titulo;
+  c.querySelector("b").textContent = valor;
+  if (sub) c.querySelector("small").textContent = sub;
+  document.getElementById(alvo).appendChild(c);
+}
 
 function barras(id, itens, rotulo) {
   var ul = document.getElementById(id);
+  ul.innerHTML = "";
   var max = Math.max.apply(null, itens.map(function (i) { return i.pct; })) || 1;
   itens.forEach(function (i) {
     var li = el("li");
-    li.appendChild(el("span", "nome", rotulo(i.chave)));
-    li.appendChild(el("span", "pct", pct(i.pct)));
+    var nome = el("span", "nome");
+    var r = rotulo(i.chave);
+    if (r.sigla) nome.appendChild(el("em", null, r.sigla));
+    nome.appendChild(document.createTextNode(r.texto));
+    li.appendChild(nome);
+    li.appendChild(el("span", "pct", dec(i.pct, 1) + " %"));
     var t = el("span", "trilho"), b = el("i");
     b.style.width = (100 * i.pct / max) + "%";
     t.appendChild(b); li.appendChild(t); ul.appendChild(li);
@@ -250,39 +379,85 @@ function barras(id, itens, rotulo) {
 }
 
 function preencher(d) {
-  var c = function (nome, valor) { document.querySelector('[data-campo="' + nome + '"]').textContent = valor; };
-  var t = d.ultimos_30_dias, p = d.posts_90_dias;
-  c("seguidores", compacto(d.perfil.seguidores));
-  c("alcance", compacto(t.alcance));
-  c("visualizacoes", compacto(t.visualizacoes));
-  c("engajamento", pct(p.engajamento_medio_pct.toFixed(1)));
-  c("mediana", compacto(p.mediana_views_reels));
-  c("maior", compacto(p.maior_views));
-  c("engajadas", compacto(t.contas_engajadas));
-  c("salvos", compacto(t.salvamentos + t.compartilhamentos));
+  var r = d.resumo, re = d.reels, st = d.stories;
 
-  barras("genero", d.publico.genero, function (k) { return GENERO[k] || k; });
-  barras("idade", d.publico.idade.filter(function (i) { return i.pct >= 1; })
-    .sort(function (a, b) { return a.chave < b.chave ? -1 : 1; }), function (k) { return k + " anos"; });
-  barras("paises", d.publico.paises, function (k) { return PAISES[k] || k; });
-  barras("cidades", d.publico.cidades, function (k) { return k.replace(" (state)", "").split(",")[0]; });
+  // Seguidores
+  var ig = d.perfil.seguidores;
+  document.getElementById("seg-ig").textContent = compacto(ig);
+  document.getElementById("total").textContent = compacto(ig + (SEGUIDORES_TIKTOK || 0));
+  if (SEGUIDORES_TIKTOK) document.getElementById("seg-tt").textContent = compacto(SEGUIDORES_TIKTOK);
 
-  var grade = document.getElementById("posts");
-  d.melhores_posts.forEach(function (m) {
+  // Sincronização
+  var p = d.atualizado_em.split(" ")[0].split("-");
+  var quando = Number(p[2]) + " de " + MESES[Number(p[1]) - 1];
+  document.getElementById("sinc-txt").textContent = "Sincronizado com o Instagram em " + quando;
+  document.getElementById("sinc-sub").textContent = "Dados dos últimos 30 dias / Última atualização: " + quando;
+  document.getElementById("rodape").textContent = "Números do Instagram, sincronizados automaticamente a cada 6 horas.";
+
+  // Resumo (o card de cliques só aparece quando já houver cliques; antes disso entra salvamentos)
+  card("cards-resumo", "pessoas", "Seguidores", compacto(r.seguidores));
+  card("cards-resumo", "raio", "Engajamento dos seguidores", dec(r.engajamento_pct, 1) + "%");
+  card("cards-resumo", "alvo", "Contas alcançadas", compacto(r.alcance));
+  card("cards-resumo", "coracao", "Contas engajadas", compacto(r.contas_engajadas));
+  if (r.cliques_link > 0) card("cards-resumo", "clique", "Cliques no link da bio", compacto(r.cliques_link));
+  else card("cards-resumo", "salvar", "Salvamentos", compacto(r.salvamentos || 0));
+  card("cards-resumo", "camera", "Total de publicações", compacto(r.publicacoes));
+  card("cards-resumo", "olho", "Visualizações totais", compacto(r.visualizacoes));
+  card("cards-resumo", "toque", "Interações totais", compacto(r.interacoes));
+  card("cards-resumo", "perfil", "Visitas ao perfil", compacto(r.visitas_perfil));
+  card("cards-resumo", "coracao", "Média de curtidas", compacto(r.media_curtidas), "por publicação");
+  card("cards-resumo", "balao", "Comentários médios", compacto(r.media_comentarios), "por publicação", true);
+
+  // Reels
+  card("cards-reels", "video", "Visualizações médias dos vídeos", compacto(re.media_views), "por reel");
+  card("cards-reels", "relogio", "Tempo médio de visualização (em segundos)", dec(re.tempo_medio_s, 1), "por espectador");
+  card("cards-reels", "ampulheta", "Tempo total de visualização dos reels (horas)", compacto(re.tempo_total_h));
+
+  // Stories (aparece quando já houver histórico)
+  if (st && st.quantidade > 0) {
+    var ds = st.desde ? st.desde.split("-") : null;
+    card("cards-stories", "olho", "Visualizações médias dos stories", compacto(st.media_views),
+      "por story" + (ds ? " · média de " + st.quantidade + " stories desde " + ds[2] + "/" + ds[1] : ""), true);
+    document.getElementById("secao-stories").hidden = false;
+  }
+
+  // Gênero: rosca com homens e mulheres entre quem informou
+  var g = {}; d.publico.genero.forEach(function (i) { g[i.chave] = i.valor; });
+  var h = g.M || 0, m = g.F || 0, soma = (h + m) || 1;
+  var ph = 100 * h / soma, pm = 100 - ph;
+  document.getElementById("rosca").innerHTML =
+    '<div class="anel" style="background: conic-gradient(var(--barra) 0 ' + ph + '%, var(--barra-2) ' + ph + '% 100%)"><div class="meio">' + Math.round(ph) + '%</div></div>' +
+    '<div class="legenda"><i style="background: var(--barra)"></i><span>Homens</span><span class="v">' + dec(ph, 1) + ' %</span>' +
+    '<i style="background: var(--barra-2)"></i><span>Mulheres</span><span class="v">' + dec(pm, 1) + ' %</span></div>' +
+    '<p class="nota">Entre os seguidores que informam o gênero no Instagram.</p>';
+
+  // Idade com filtro por gênero
+  var porGenero = { todos: d.publico.idade, M: d.publico.idade_por_genero.M || [], F: d.publico.idade_por_genero.F || [] };
+  function idade(gen) {
+    barras("idade", porGenero[gen].filter(function (i) { return i.pct >= 1; }), function (k) { return { texto: k + " anos" }; });
+    document.querySelectorAll(".filtros button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.g === gen)); });
+  }
+  document.querySelectorAll(".filtros button").forEach(function (b) { b.addEventListener("click", function () { idade(b.dataset.g); }); });
+  idade("todos");
+
+  barras("paises", d.publico.paises, function (k) { return { sigla: k, texto: PAISES[k] || k }; });
+  barras("cidades", d.publico.cidades, function (k) { return { texto: k.replace(" (state)", "").split(",")[0] }; });
+
+  // Postagens recentes
+  var trilha = document.getElementById("recentes");
+  d.recentes.forEach(function (x) {
     var a = el("a", "post");
-    a.href = m.link; a.target = "_blank"; a.rel = "noopener";
-    a.setAttribute("aria-label", compacto(m.views) + " visualizações: " + m.legenda);
-    var img = el("img"); img.src = m.capa; img.alt = ""; img.loading = "lazy";
-    var info = el("span", "info");
-    info.appendChild(el("b", null, compacto(m.views)));
-    info.appendChild(el("span", null, "visualizações"));
-    a.appendChild(img); a.appendChild(info); grade.appendChild(a);
+    a.href = x.link; a.target = "_blank"; a.rel = "noopener";
+    a.setAttribute("aria-label", compacto(x.views) + " visualizações: " + x.legenda);
+    a.innerHTML = '<img alt="" loading="lazy"><svg class="play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5L8 5.5z" fill="currentColor"/></svg>' +
+      '<span class="stats"><span>' + svg("olho") + '<b></b></span><span>' + svg("coracao") + '<b></b></span><span>' + svg("balao") + "<b></b></span></span>";
+    a.querySelector("img").src = x.capa;
+    var bs = a.querySelectorAll(".stats b");
+    bs[0].textContent = compacto(x.views).replace(" mil", "k").replace(" milhão", "M").replace(" milhões", "M");
+    bs[1].textContent = compacto(x.curtidas).replace(" mil", "k");
+    bs[2].textContent = compacto(x.comentarios).replace(" mil", "k");
+    trilha.appendChild(a);
   });
-
-  var data = d.atualizado_em.split(" ")[0].split("-");
-  document.getElementById("rodape").textContent =
-    "Números do Instagram, atualizados automaticamente. Última atualização: " + data[2] + "/" + data[1] + "/" + data[0] + ".";
-  document.getElementById("kit").classList.remove("carregando");
 }
 
 fetch("dados.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(preencher).catch(function () {

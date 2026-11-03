@@ -115,6 +115,13 @@ a { color: inherit; }
 .link .t { font-weight: 650; font-size: 15px; }
 .link .s { color: var(--muted); font-size: 13px; }
 .link .seta { width: 16px; height: 16px; flex: none; color: var(--muted); }
+/* Botão do media kit: foto pequena à esquerda e o texto no centro, como nas páginas de link na bio */
+.link.kit { padding: 8px 14px 8px 8px; gap: 12px; background: var(--surface); }
+.link.kit .mini { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; flex: none; }
+.link.kit .txt { align-items: center; text-align: center; }
+.link.kit .t { font-size: 16px; font-weight: 700; }
+.link.kit .s { font-size: 12.5px; }
+.link.kit .seta { width: 18px; height: 18px; }
 
 /* Cupons */
 .cupom {
@@ -250,7 +257,11 @@ footer { text-align: center; color: var(--muted); font-size: 12px; font-family: 
         <div><dt>do público tem entre 25 e 44 anos</dt><dd data-mk="idade">72%</dd></div>
       </dl>
       <p class="fonte" id="mk-fonte">Dados do Instagram, atualizados todo dia · parceiros: Dark Lab, Alpha Co.</p>
-      <a class="btn cheio" id="mediakit" href="mediakit/">Ver media kit completo</a>
+      <a class="link kit" id="mediakit" href="mediakit/">
+        <img class="mini" src="foto.jpg" alt="" width="44" height="44">
+        <span class="txt"><span class="t">Media Kit</span><span class="s">Números sincronizados com o Instagram</span></span>
+        <svg class="seta" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3.5L10.5 8 6 12.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
       <div class="email">
         <span id="email">oduducontatto@gmail.com</span>
         <button class="btn" type="button" id="copiar-email" data-copiar="oduducontatto@gmail.com">Copiar e-mail</button>
