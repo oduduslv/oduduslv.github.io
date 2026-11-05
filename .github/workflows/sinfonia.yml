@@ -1,0 +1,40 @@
+name: sinfonia
+
+on:
+  issues:
+    types: [labeled]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: sinfonia-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  sinfonia:
+    if: |
+      (github.event_name == 'issues' && github.event.label.name == 'sinfonia') ||
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Agente do Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          label_trigger: "sinfonia"
+          branch_prefix: "sinfonia/"
+          track_progress: true
+          claude_args: "--max-turns 60"
