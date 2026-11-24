@@ -1,52 +1,52 @@
 {
- "atualizado_em": "2026-11-23 21:38",
+ "atualizado_em": "2026-11-24 03:49",
  "perfil": {
   "usuario": "oduduslv",
-  "seguidores": 19711,
+  "seguidores": 19767,
   "posts": 177
  },
  "resumo": {
-  "seguidores": 19711,
-  "engajamento_pct": 9.27,
-  "alcance": 230764,
-  "contas_engajadas": 19946,
-  "cliques_link": 106,
-  "salvamentos": 5956,
+  "seguidores": 19767,
+  "engajamento_pct": 9.58,
+  "alcance": 236228,
+  "contas_engajadas": 20510,
+  "cliques_link": 113,
+  "salvamentos": 6182,
   "publicacoes": 177,
-  "visualizacoes": 698557,
-  "interacoes": 37614,
-  "visitas_perfil": 12795,
-  "media_curtidas": 1161,
-  "media_comentarios": 35,
+  "visualizacoes": 716152,
+  "interacoes": 38749,
+  "visitas_perfil": 13173,
+  "media_curtidas": 1204,
+  "media_comentarios": 36,
   "posts_na_base": 14
  },
  "reels": {
   "quantidade": 10,
-  "media_views": 37818,
-  "tempo_medio_s": 10.2,
-  "tempo_total_h": 1219
+  "media_views": 39062,
+  "tempo_medio_s": 10.3,
+  "tempo_total_h": 1265
  },
  "stories": {
   "quantidade": 91,
-  "media_views": 1357,
-  "media_alcance": 1037,
+  "media_views": 1377,
+  "media_alcance": 1054,
   "desde": "2026-11-02"
  },
  "publico": {
   "genero": [
    {
     "chave": "M",
-    "valor": 14454,
+    "valor": 14480,
     "pct": 74.8
    },
    {
     "chave": "U",
-    "valor": 3854,
+    "valor": 3848,
     "pct": 19.9
    },
    {
     "chave": "F",
-    "valor": 1027,
+    "valor": 1031,
     "pct": 5.3
    }
   ],
@@ -58,23 +58,23 @@
    },
    {
     "chave": "18-24",
-    "valor": 3370,
+    "valor": 3360,
     "pct": 17.4
    },
    {
     "chave": "25-34",
-    "valor": 9277,
-    "pct": 48.0
+    "valor": 9280,
+    "pct": 47.9
    },
    {
     "chave": "35-44",
-    "valor": 4818,
-    "pct": 24.9
+    "valor": 4837,
+    "pct": 25.0
    },
    {
     "chave": "45-54",
-    "valor": 1278,
-    "pct": 6.6
+    "valor": 1290,
+    "pct": 6.7
    },
    {
     "chave": "55-64",
@@ -101,18 +101,18 @@
     },
     {
      "chave": "25-34",
-     "valor": 7003,
-     "pct": 48.5
+     "valor": 7000,
+     "pct": 48.3
     },
     {
      "chave": "35-44",
-     "valor": 3815,
-     "pct": 26.4
+     "valor": 3834,
+     "pct": 26.5
     },
     {
      "chave": "45-54",
-     "valor": 945,
-     "pct": 6.5
+     "valor": 955,
+     "pct": 6.6
     },
     {
      "chave": "55-64",
@@ -133,23 +133,23 @@
     },
     {
      "chave": "18-24",
-     "valor": 840,
-     "pct": 21.8
+     "valor": 831,
+     "pct": 21.6
     },
     {
      "chave": "25-34",
-     "valor": 1868,
-     "pct": 48.5
+     "valor": 1873,
+     "pct": 48.7
     },
     {
      "chave": "35-44",
-     "valor": 774,
+     "valor": 773,
      "pct": 20.1
     },
     {
      "chave": "45-54",
-     "valor": 241,
-     "pct": 6.3
+     "valor": 240,
+     "pct": 6.2
     },
     {
      "chave": "55-64",
@@ -170,23 +170,23 @@
     },
     {
      "chave": "18-24",
-     "valor": 258,
-     "pct": 25.1
+     "valor": 257,
+     "pct": 24.9
     },
     {
      "chave": "25-34",
-     "valor": 406,
+     "valor": 407,
      "pct": 39.5
     },
     {
      "chave": "35-44",
-     "valor": 229,
+     "valor": 230,
      "pct": 22.3
     },
     {
      "chave": "45-54",
-     "valor": 92,
-     "pct": 9.0
+     "valor": 95,
+     "pct": 9.2
     },
     {
      "chave": "55-64",
@@ -203,44 +203,44 @@
   "paises": [
    {
     "chave": "BR",
-    "valor": 12116,
-    "pct": 64.4
+    "valor": 12148,
+    "pct": 64.5
    },
    {
     "chave": "MX",
-    "valor": 1519,
+    "valor": 1516,
     "pct": 8.1
    },
    {
     "chave": "IN",
-    "valor": 924,
+    "valor": 922,
     "pct": 4.9
    },
    {
     "chave": "US",
-    "valor": 826,
+    "valor": 822,
     "pct": 4.4
    },
    {
     "chave": "PE",
-    "valor": 410,
+    "valor": 411,
     "pct": 2.2
    },
    {
     "chave": "PH",
-    "valor": 284,
+    "valor": 283,
     "pct": 1.5
    }
   ],
   "cidades": [
    {
     "chave": "São Paulo, São Paulo (state)",
-    "valor": 819,
+    "valor": 821,
     "pct": 13.8
    },
    {
     "chave": "Rio de Janeiro, Rio de Janeiro (state)",
-    "valor": 477,
+    "valor": 478,
     "pct": 8.0
    },
    {
@@ -249,13 +249,13 @@
     "pct": 6.5
    },
    {
-    "chave": "Lagoa Santa, Minas Gerais",
-    "valor": 330,
+    "chave": "Fortaleza, Ceará",
+    "valor": 331,
     "pct": 5.5
    },
    {
-    "chave": "Fortaleza, Ceará",
-    "valor": 329,
+    "chave": "Lagoa Santa, Minas Gerais",
+    "valor": 330,
     "pct": 5.5
    },
    {
@@ -271,17 +271,17 @@
    "link": "https://www.instagram.com/reel/DgGYC-0DKi8/",
    "data": "2026-11-23",
    "legenda": "Depois de 30 dias sofridos, esse foi o resultado que alcançamos de forma natural, aos 18 a",
-   "views": 13385,
-   "curtidas": 672,
-   "comentarios": 18
+   "views": 23464,
+   "curtidas": 1193,
+   "comentarios": 31
   },
   {
    "capa": "capas/2.jpg",
    "link": "https://www.instagram.com/reel/Df8CxYMRs_h/",
    "data": "2026-11-19",
    "legenda": "É um erro acreditar que precisa utilizar esse tipo de substância para ter um bom físico… E",
-   "views": 5190,
-   "curtidas": 297,
+   "views": 5336,
+   "curtidas": 308,
    "comentarios": 18
   },
   {
@@ -289,8 +289,8 @@
    "link": "https://www.instagram.com/reel/Df2lUbvtvZt/",
    "data": "2026-11-17",
    "legenda": "Dia 27 do nosso desafio! O que acharam?! Mudou alguma coisa?! 👇🏽",
-   "views": 21132,
-   "curtidas": 750,
+   "views": 21312,
+   "curtidas": 756,
    "comentarios": 31
   },
   {
@@ -298,8 +298,8 @@
    "link": "https://www.instagram.com/p/Dfz9MrzHCR0/",
    "data": "2026-11-16",
    "legenda": "Meu treino de inferiores completo 💪",
-   "views": 16848,
-   "curtidas": 462,
+   "views": 17049,
+   "curtidas": 468,
    "comentarios": 11
   },
   {
@@ -307,8 +307,8 @@
    "link": "https://www.instagram.com/p/Dfp0Bs9m_TF/",
    "data": "2026-11-12",
    "legenda": "Esse é meu lifestyle. 🤏🏾",
-   "views": 12635,
-   "curtidas": 568,
+   "views": 12734,
+   "curtidas": 569,
    "comentarios": 15
   },
   {
@@ -316,8 +316,8 @@
    "link": "https://www.instagram.com/reel/Dfn7ghdxb5T/",
    "data": "2026-11-12",
    "legenda": "E essa foi a transformação em 3 semanas… Me segue para acompanhar a reta final 🫡",
-   "views": 10850,
-   "curtidas": 453,
+   "views": 10968,
+   "curtidas": 461,
    "comentarios": 10
   },
   {
@@ -325,8 +325,8 @@
    "link": "https://www.instagram.com/p/DfkpszXAAin/",
    "data": "2026-11-10",
    "legenda": "Treino de superior completo para ficar fortin 💪",
-   "views": 9446,
-   "curtidas": 260,
+   "views": 9493,
+   "curtidas": 262,
    "comentarios": 20
   },
   {
@@ -334,8 +334,8 @@
    "link": "https://www.instagram.com/reel/Dfh7sRwtEMl/",
    "data": "2026-11-09",
    "legenda": "Estamos chegando ao final do desafio… Me segue para me acompanhar na reta final 🤝",
-   "views": 52114,
-   "curtidas": 1133,
+   "views": 52276,
+   "curtidas": 1138,
    "comentarios": 26
   },
   {
@@ -343,8 +343,8 @@
    "link": "https://www.instagram.com/reel/DfXuup5NvXh/",
    "data": "2026-11-05",
    "legenda": "Faltam apenas 15 dias para finalizar o desafio, e agora a coisa ficou ainda mais séria! Os",
-   "views": 11767,
-   "curtidas": 744,
+   "views": 11884,
+   "curtidas": 750,
    "comentarios": 35
   },
   {
@@ -352,7 +352,7 @@
    "link": "https://www.instagram.com/p/DfVzfX8Ed5X/",
    "data": "2026-11-05",
    "legenda": "🤏🏾💆🏽‍♂️",
-   "views": 11525,
+   "views": 11545,
    "curtidas": 447,
    "comentarios": 23
   }
