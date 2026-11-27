@@ -1,35 +1,35 @@
 {
- "atualizado_em": "2026-11-26 21:46",
+ "atualizado_em": "2026-11-27 03:53",
  "perfil": {
   "usuario": "oduduslv",
-  "seguidores": 19994,
-  "posts": 177
+  "seguidores": 20020,
+  "posts": 178
  },
  "resumo": {
-  "seguidores": 19994,
-  "engajamento_pct": 11.28,
-  "alcance": 241731,
-  "contas_engajadas": 22332,
-  "cliques_link": 142,
-  "salvamentos": 6616,
-  "publicacoes": 177,
-  "visualizacoes": 757799,
-  "interacoes": 42168,
-  "visitas_perfil": 14282,
-  "media_curtidas": 1443,
-  "media_comentarios": 42,
-  "posts_na_base": 13
+  "seguidores": 20020,
+  "engajamento_pct": 10.67,
+  "alcance": 243662,
+  "contas_engajadas": 22709,
+  "cliques_link": 144,
+  "salvamentos": 6690,
+  "publicacoes": 178,
+  "visualizacoes": 769136,
+  "interacoes": 42846,
+  "visitas_perfil": 14478,
+  "media_curtidas": 1373,
+  "media_comentarios": 40,
+  "posts_na_base": 14
  },
  "reels": {
-  "quantidade": 9,
-  "media_views": 46472,
+  "quantidade": 10,
+  "media_views": 42711,
   "tempo_medio_s": 11.0,
-  "tempo_total_h": 1385
+  "tempo_total_h": 1409
  },
  "stories": {
-  "quantidade": 102,
-  "media_views": 1443,
-  "media_alcance": 1103,
+  "quantidade": 104,
+  "media_views": 1430,
+  "media_alcance": 1093,
   "desde": "2026-11-02"
  },
  "publico": {
@@ -268,93 +268,93 @@
  "recentes": [
   {
    "capa": "capas/1.jpg",
-   "link": "https://www.instagram.com/reel/DgGYC-0DKi8/",
-   "data": "2026-11-23",
-   "legenda": "Depois de 30 dias sofridos, esse foi o resultado que alcançamos de forma natural, aos 18 a",
-   "views": 48528,
-   "curtidas": 2882,
-   "comentarios": 73
-  },
-  {
-   "capa": "capas/2.jpg",
-   "link": "https://www.instagram.com/reel/Df8CxYMRs_h/",
-   "data": "2026-11-19",
-   "legenda": "É um erro acreditar que precisa utilizar esse tipo de substância para ter um bom físico… E",
-   "views": 5889,
-   "curtidas": 338,
-   "comentarios": 18
-  },
-  {
-   "capa": "capas/3.jpg",
-   "link": "https://www.instagram.com/reel/Df2lUbvtvZt/",
-   "data": "2026-11-17",
-   "legenda": "Dia 27 do nosso desafio! O que acharam?! Mudou alguma coisa?! 👇🏽",
-   "views": 22114,
-   "curtidas": 801,
-   "comentarios": 31
-  },
-  {
-   "capa": "capas/4.jpg",
-   "link": "https://www.instagram.com/p/Dfz9MrzHCR0/",
-   "data": "2026-11-16",
-   "legenda": "Meu treino de inferiores completo 💪",
-   "views": 19092,
-   "curtidas": 528,
+   "link": "https://www.instagram.com/reel/DgOq73Rx0mM/",
+   "data": "2026-11-27",
+   "legenda": "Essa será a minha nova rotina de treinos…",
+   "views": 6741,
+   "curtidas": 389,
    "comentarios": 11
   },
   {
+   "capa": "capas/2.jpg",
+   "link": "https://www.instagram.com/reel/DgGYC-0DKi8/",
+   "data": "2026-11-23",
+   "legenda": "Depois de 30 dias sofridos, esse foi o resultado que alcançamos de forma natural, aos 18 a",
+   "views": 48988,
+   "curtidas": 2913,
+   "comentarios": 69
+  },
+  {
+   "capa": "capas/3.jpg",
+   "link": "https://www.instagram.com/reel/Df8CxYMRs_h/",
+   "data": "2026-11-19",
+   "legenda": "É um erro acreditar que precisa utilizar esse tipo de substância para ter um bom físico… E",
+   "views": 5958,
+   "curtidas": 339,
+   "comentarios": 18
+  },
+  {
+   "capa": "capas/4.jpg",
+   "link": "https://www.instagram.com/reel/Df2lUbvtvZt/",
+   "data": "2026-11-17",
+   "legenda": "Dia 27 do nosso desafio! O que acharam?! Mudou alguma coisa?! 👇🏽",
+   "views": 22209,
+   "curtidas": 804,
+   "comentarios": 31
+  },
+  {
    "capa": "capas/5.jpg",
+   "link": "https://www.instagram.com/p/Dfz9MrzHCR0/",
+   "data": "2026-11-16",
+   "legenda": "Meu treino de inferiores completo 💪",
+   "views": 19202,
+   "curtidas": 530,
+   "comentarios": 11
+  },
+  {
+   "capa": "capas/6.jpg",
    "link": "https://www.instagram.com/p/Dfp0Bs9m_TF/",
    "data": "2026-11-12",
    "legenda": "Esse é meu lifestyle. 🤏🏾",
-   "views": 13391,
+   "views": 13417,
    "curtidas": 605,
    "comentarios": 15
   },
   {
-   "capa": "capas/6.jpg",
+   "capa": "capas/7.jpg",
    "link": "https://www.instagram.com/reel/Dfn7ghdxb5T/",
    "data": "2026-11-12",
    "legenda": "E essa foi a transformação em 3 semanas… Me segue para acompanhar a reta final 🫡",
-   "views": 11612,
-   "curtidas": 490,
+   "views": 11668,
+   "curtidas": 492,
    "comentarios": 10
   },
   {
-   "capa": "capas/7.jpg",
+   "capa": "capas/8.jpg",
    "link": "https://www.instagram.com/p/DfkpszXAAin/",
    "data": "2026-11-10",
    "legenda": "Treino de superior completo para ficar fortin 💪",
-   "views": 9975,
-   "curtidas": 269,
+   "views": 10013,
+   "curtidas": 271,
    "comentarios": 20
   },
   {
-   "capa": "capas/8.jpg",
+   "capa": "capas/9.jpg",
    "link": "https://www.instagram.com/reel/Dfh7sRwtEMl/",
    "data": "2026-11-09",
    "legenda": "Estamos chegando ao final do desafio… Me segue para me acompanhar na reta final 🤝",
-   "views": 52941,
-   "curtidas": 1149,
+   "views": 53031,
+   "curtidas": 1150,
    "comentarios": 26
   },
   {
-   "capa": "capas/9.jpg",
+   "capa": "capas/10.jpg",
    "link": "https://www.instagram.com/reel/DfXuup5NvXh/",
    "data": "2026-11-05",
    "legenda": "Faltam apenas 15 dias para finalizar o desafio, e agora a coisa ficou ainda mais séria! Os",
-   "views": 12226,
+   "views": 12261,
    "curtidas": 764,
    "comentarios": 36
-  },
-  {
-   "capa": "capas/10.jpg",
-   "link": "https://www.instagram.com/p/DfVzfX8Ed5X/",
-   "data": "2026-11-05",
-   "legenda": "🤏🏾💆🏽‍♂️",
-   "views": 11637,
-   "curtidas": 447,
-   "comentarios": 23
   }
  ]
 }
